@@ -1117,10 +1117,9 @@
 
       function validateNameFormat(name) {
         const clean = normalizeNomineeName(name);
-        const pattern = /^[A-Z .'-]+,\s[A-Z .'-]+(\s[A-Z]\.)?$/;
+        const pattern = /^[A-Z.'-]+,\s[A-Z.'-]+(\s[A-Z]\.)?$/;
         return pattern.test(clean);
       }
-
       attachmentsInput.addEventListener("change", () => {
         const count = attachmentsInput.files.length;
         if (count > 5) {
@@ -1148,11 +1147,11 @@
         const nomineeName = normalizeNomineeName(nomineeNameInput.value);
         nomineeNameInput.value = nomineeName;
 
-        if (validateNameFormat(nomineeName)) {
+        if (!validateNameFormat(nomineeName)) {
           showMessage(
             formMessage,
             "error",
-            "Nominee name must be in CAPITAL LETTERS and follow this format: SURNAME, GIVEN NAME, MI",
+            "Use CAPITAL LETTERS only. Format: SURNAME, GIVEN NAME, MI (e.g., DELA CRUZ, JUAN A.)",
           );
           return;
         }
