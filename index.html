@@ -82,6 +82,19 @@
         <form id="nominationForm" class="card">
           <h2>Nomination Entry</h2>
           <div class="grid">
+            <div class="col-12">
+              <label for="userName">Full Name</label>
+
+              <input
+                id="userName"
+                name="userName"
+                required
+                placeholder="Your full name"
+              />
+              <div class="hint">
+                Use CAPITAL LETTERS only. Format: SURNAME, GIVEN NAME, MI
+              </div>
+            </div>
             <div class="col-6">
               <label for="nomineeName">Name of Nominee</label>
               <input
@@ -362,7 +375,7 @@
               <textarea id="peerRemarks" name="peerRemarks"></textarea>
             </div>
 
-            <div class="col-12">
+            <!-- <div class="col-12">
               <label for="attachments">Attach up to 5 files/documents</label>
               <input type="file" id="attachments" name="attachments" multiple />
               <div class="hint">
@@ -371,6 +384,22 @@
                 storage.
               </div>
               <div id="attachmentNote" class="hint"></div>
+            </div> -->
+
+            <div class="col-12">
+              <label for="attachments">Paste your attachment link here:</label>
+              <div class="hint">
+                Attach up to 5 files in your preferred cloud storage (Google
+                Drive, Dropbox, etc.) and paste the shareable link here. Make
+                sure the link is set to "Anyone with the link can view" for
+                access.
+              </div>
+              <input
+                type="url"
+                id="attachments"
+                placeholder="https://example.com/my-file"
+                required
+              />
             </div>
 
             <div class="col-12 inline">
@@ -549,6 +578,7 @@
             <table>
               <thead>
                 <tr>
+                  <th>Rater Name</th>
                   <th>Date</th>
                   <th>Nominee</th>
                   <th>Type</th>
@@ -560,6 +590,15 @@
               </thead>
               <tbody id="detailTableBody"></tbody>
             </table>
+          </div>
+        </div>
+        <div id="urlModal" class="modal-overlay hidden">
+          <div class="modal-content card">
+            <div class="modal-header">
+              <h3 id="modalTitle">Attachments</h3>
+              <button onclick="closeModal()" class="btn-close">&times;</button>
+            </div>
+            <div id="urlList" class="modal-body"></div>
           </div>
         </div>
       </section>
@@ -638,6 +677,38 @@
 
       /* ---------------- UTILITIES ---------------- */
 
+      window.openAttachmentModal = function (name, urls) {
+        const modal = document.getElementById("urlModal");
+        const title = document.getElementById("modalTitle");
+        const list = document.getElementById("urlList");
+
+        title.textContent = `Attachments for ${name}`;
+        list.innerHTML = ""; // Clear previous links
+
+        urls.forEach((url, index) => {
+          const a = document.createElement("a");
+          a.href = url;
+          a.target = "_blank";
+          a.className = "url-item";
+          a.innerHTML = `<strong>Link ${index + 1}:</strong> ${url}`;
+          list.appendChild(a);
+        });
+
+        modal.classList.remove("hidden");
+      };
+
+      window.closeModal = function () {
+        document.getElementById("urlModal").classList.add("hidden");
+      };
+
+      // Close modal when clicking outside the box
+      window.onclick = function (event) {
+        const modal = document.getElementById("urlModal");
+        if (event.target == modal) {
+          closeModal();
+        }
+      };
+
       function normalizeNomineeName(name) {
         return String(name || "")
           .trim()
@@ -675,6 +746,7 @@
         const attachmentNote = document.getElementById("attachmentNote");
 
         const nomineeNameInput = document.getElementById("nomineeName");
+        const userNameInput = document.getElementById("userName");
 
         /* ---------- VIEW CONTROL ---------- */
 
@@ -779,29 +851,22 @@
 
         /* ---------- ATTACHMENTS ---------- */
 
-        attachmentsInput.addEventListener("change", () => {
-          const count = attachmentsInput.files.length;
-
-          if (count > 5) {
-            attachmentsInput.value = "";
-            attachmentNote.textContent = "Only up to 5 files are allowed.";
-          } else {
-            attachmentNote.textContent = count
-              ? `${count} file(s) selected.`
-              : "";
-          }
-        });
-
         /* ---------- FORM SUBMIT ---------- */
 
         nominationForm.addEventListener("submit", async (e) => {
           e.preventDefault();
 
           const nomineeName = normalizeNomineeName(nomineeNameInput.value);
+          const attachmentLink = document
+            .getElementById("attachments")
+            .value.trim();
 
           nomineeNameInput.value = nomineeName;
 
-          if (!validateNameFormat(nomineeName)) {
+          if (
+            !validateNameFormat(nomineeName) ||
+            !validateNameFormat(userNameInput.value)
+          ) {
             alert("Use format: SURNAME, GIVEN NAME, MI");
             return;
           }
@@ -826,6 +891,8 @@
 
           const payload = {
             submittedAt: new Date().toLocaleString(),
+
+            nameOfRater: userNameInput.value,
 
             nomineeName,
 
@@ -860,10 +927,7 @@
 
             weightedScore: updateScorePreview(),
 
-            attachments: Array.from(attachmentsInput.files).map((f) => ({
-              name: f.name,
-              size: f.size,
-            })),
+            attachments: attachmentLink ? [attachmentLink] : [],
           };
 
           await saveSubmission(payload);
@@ -886,6 +950,7 @@
             if (!map.has(key)) {
               map.set(key, {
                 nomineeName: item.nomineeName,
+                nameOfRater: item.nameOfRater,
                 gradeLevel: item.gradeLevel,
                 section: item.section,
 
@@ -900,7 +965,9 @@
                 schoolCommunityContribution: 0,
 
                 weightedScore: 0,
-                attachmentCount: 0,
+                allAttachments: [],
+                attachments: item.attachments || [],
+                attachmentsCount: 0,
               });
             }
 
@@ -924,8 +991,12 @@
             );
 
             row.weightedScore += Number(item.weightedScore || 0);
+            row.attachmentsCount += (item.attachments || []).length;
 
-            row.attachmentCount += (item.attachments || []).length;
+            if (Array.isArray(item.attachments)) {
+              row.allAttachments.push(...item.attachments);
+            }
+            console.log("Processing submission for nominee:", row);
           });
 
           return Array.from(map.values())
@@ -934,7 +1005,6 @@
 
               return {
                 ...row,
-
                 avgLeadershipInitiative: row.leadershipInitiative / entries,
                 avgInfluenceMotivation: row.influenceMotivation / entries,
                 avgResponsibilityAccountability:
@@ -942,7 +1012,6 @@
                 avgTeamworkCollaboration: row.teamworkCollaboration / entries,
                 avgSchoolCommunityContribution:
                   row.schoolCommunityContribution / entries,
-
                 avgWeightedScore: row.weightedScore / entries,
               };
             })
@@ -993,7 +1062,17 @@
         <td>${row.avgTeamworkCollaboration.toFixed(2)}%</td>
         <td>${row.avgSchoolCommunityContribution.toFixed(2)}%</td>
         <td><strong>${row.avgWeightedScore.toFixed(2)}%</strong></td>
-        <td>${row.attachmentCount}</td>
+        <td>
+        ${
+          row.allAttachments.length > 0
+            ? `<a href="javascript:void(0)" 
+          onclick="openAttachmentModal('${row.nomineeName}', ${JSON.stringify(row.allAttachments).replace(/"/g, "&quot;")})" 
+          style="color: #007bff; font-weight: bold; text-decoration: underline;">
+          ${row.allAttachments.length} File(s)
+       </a>`
+            : "0"
+        }
+        </td>
       `;
 
               summaryBody.appendChild(tr);
@@ -1028,13 +1107,16 @@
               const tr = document.createElement("tr");
 
               tr.innerHTML = `
+        <td>${item.nameOfRater || "-"}</td>
         <td>${item.submittedAt || "-"}</td>
         <td><strong>${item.nomineeName || "-"}</strong></td>
         <td><span class="pill ${typeClass}">${item.raterType || "-"}</span></td>
         <td>${rater}</td>
         <td>${weighted}%</td>
         <td>${recommendation}</td>
-        <td>${attachmentsCount}</td>
+         <td>
+          <a href="${item?.attachments?.[0]}" target="_blank">View</a>
+        </td>
       `;
 
               detailBody.appendChild(tr);
