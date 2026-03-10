@@ -1,952 +1,1430 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Compostela National High School | Leadership Award Nomination</title>
-  <style>
-    :root {
-      --bg: #f4f7fb;
-      --card: #ffffff;
-      --line: #d7e0ec;
-      --text: #123;
-      --muted: #5b6b7b;
-      --primary: #0b57d0;
-      --primary-dark: #0847aa;
-      --accent: #0f766e;
-      --danger: #b42318;
-      --warn: #b54708;
-      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-      --radius: 18px;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compostela National High School | Leadership Award Nomination</title>
+    <style>
+      :root {
+        --bg: #f4f7fb;
+        --card: #ffffff;
+        --line: #d7e0ec;
+        --text: #123;
+        --muted: #5b6b7b;
+        --primary: #0b57d0;
+        --primary-dark: #0847aa;
+        --accent: #0f766e;
+        --danger: #b42318;
+        --warn: #b54708;
+        --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+        --radius: 18px;
+      }
 
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(180deg, #eef4fb 0%, #f8fbff 100%);
-      color: var(--text);
-    }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(180deg, #eef4fb 0%, #f8fbff 100%);
+        color: var(--text);
+      }
 
-    .topbar {
-      background: #0d47a1;
-      color: #fff;
-      padding: 14px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      box-shadow: 0 4px 18px rgba(0,0,0,.12);
-    }
+      .topbar {
+        background: #0d47a1;
+        color: #fff;
+        padding: 14px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+      }
 
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
+      .brand {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
 
-    .brand strong { font-size: 18px; }
-    .brand span { font-size: 12px; opacity: .9; }
+      .brand strong {
+        font-size: 18px;
+      }
+      .brand span {
+        font-size: 12px;
+        opacity: 0.9;
+      }
 
-    .top-actions {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
+      .top-actions {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
 
-    .container {
-      max-width: 1220px;
-      margin: 24px auto;
-      padding: 0 16px 40px;
-    }
+      .container {
+        max-width: 1220px;
+        margin: 24px auto;
+        padding: 0 16px 40px;
+      }
 
-    .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 22px;
-      margin-bottom: 18px;
-    }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 22px;
+        margin-bottom: 18px;
+      }
 
-    .hero {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 18px;
-      align-items: start;
-    }
+      .hero {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 18px;
+        align-items: start;
+      }
 
-    h1, h2, h3 { margin: 0 0 10px; }
-    h1 { font-size: 28px; }
-    h2 { font-size: 22px; }
-    h3 { font-size: 18px; }
-    p { line-height: 1.5; }
-    .muted { color: var(--muted); }
+      h1,
+      h2,
+      h3 {
+        margin: 0 0 10px;
+      }
+      h1 {
+        font-size: 28px;
+      }
+      h2 {
+        font-size: 22px;
+      }
+      h3 {
+        font-size: 18px;
+      }
+      p {
+        line-height: 1.5;
+      }
+      .muted {
+        color: var(--muted);
+      }
 
-    .badge {
-      display: inline-block;
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 700;
-      background: #e7f0ff;
-      color: var(--primary-dark);
-      margin-right: 8px;
-      margin-bottom: 8px;
-    }
+      .badge {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 700;
+        background: #e7f0ff;
+        color: var(--primary-dark);
+        margin-right: 8px;
+        margin-bottom: 8px;
+      }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 14px;
-    }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 14px;
+      }
 
-    .col-12 { grid-column: span 12; }
-    .col-8 { grid-column: span 8; }
-    .col-6 { grid-column: span 6; }
-    .col-4 { grid-column: span 4; }
-    .col-3 { grid-column: span 3; }
+      .col-12 {
+        grid-column: span 12;
+      }
+      .col-8 {
+        grid-column: span 8;
+      }
+      .col-6 {
+        grid-column: span 6;
+      }
+      .col-4 {
+        grid-column: span 4;
+      }
+      .col-3 {
+        grid-column: span 3;
+      }
 
-    label {
-      display: block;
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
+      label {
+        display: block;
+        font-size: 13px;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
 
-    input, select, textarea {
-      width: 100%;
-      padding: 12px 12px;
-      border: 1px solid #c9d6e4;
-      border-radius: 12px;
-      font-size: 14px;
-      background: #fff;
-    }
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 12px 12px;
+        border: 1px solid #c9d6e4;
+        border-radius: 12px;
+        font-size: 14px;
+        background: #fff;
+      }
 
-    textarea { min-height: 110px; resize: vertical; }
-    input[type="file"] { padding: 9px; }
-    input[type="checkbox"] { width: auto; transform: translateY(2px); }
-    input[type="range"] { padding: 0; }
+      textarea {
+        min-height: 110px;
+        resize: vertical;
+      }
+      input[type="file"] {
+        padding: 9px;
+      }
+      input[type="checkbox"] {
+        width: auto;
+        transform: translateY(2px);
+      }
+      input[type="range"] {
+        padding: 0;
+      }
 
-    .hint { font-size: 12px; color: var(--muted); margin-top: 4px; }
-    .inline { display: flex; align-items: center; gap: 8px; }
-    .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+      .hint {
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 4px;
+      }
+      .inline {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 8px;
+      }
 
-    button, .btn {
-      border: 0;
-      border-radius: 12px;
-      padding: 11px 16px;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: 700;
-      transition: .2s ease;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
+      button,
+      .btn {
+        border: 0;
+        border-radius: 12px;
+        padding: 11px 16px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 700;
+        transition: 0.2s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
 
-    .btn-primary { background: var(--primary); color: white; }
-    .btn-primary:hover { background: var(--primary-dark); }
-    .btn-secondary { background: #edf3fb; color: #1d3557; }
-    .btn-danger { background: var(--danger); color: white; }
-    .btn-success { background: var(--accent); color: white; }
-    .btn-warning { background: #fff3e8; color: var(--warn); border: 1px solid #f4d7b5; }
+      .btn-primary {
+        background: var(--primary);
+        color: white;
+      }
+      .btn-primary:hover {
+        background: var(--primary-dark);
+      }
+      .btn-secondary {
+        background: #edf3fb;
+        color: #1d3557;
+      }
+      .btn-danger {
+        background: var(--danger);
+        color: white;
+      }
+      .btn-success {
+        background: var(--accent);
+        color: white;
+      }
+      .btn-warning {
+        background: #fff3e8;
+        color: var(--warn);
+        border: 1px solid #f4d7b5;
+      }
 
-    .notice, .error, .success {
-      border-radius: 12px;
-      padding: 12px 14px;
-      font-size: 14px;
-      margin-top: 10px;
-    }
-    .notice { background: #eef7ff; color: #123f72; border: 1px solid #cfe3ff; }
-    .error { background: #fff2f0; color: #8a1f17; border: 1px solid #f2c7c2; }
-    .success { background: #effdf6; color: #146c43; border: 1px solid #bbe7ce; }
+      .notice,
+      .error,
+      .success {
+        border-radius: 12px;
+        padding: 12px 14px;
+        font-size: 14px;
+        margin-top: 10px;
+      }
+      .notice {
+        background: #eef7ff;
+        color: #123f72;
+        border: 1px solid #cfe3ff;
+      }
+      .error {
+        background: #fff2f0;
+        color: #8a1f17;
+        border: 1px solid #f2c7c2;
+      }
+      .success {
+        background: #effdf6;
+        color: #146c43;
+        border: 1px solid #bbe7ce;
+      }
 
-    .hidden { display: none !important; }
+      .hidden {
+        display: none !important;
+      }
 
-    .metric-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      margin: 12px 0 18px;
-    }
+      .metric-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        margin: 12px 0 18px;
+      }
 
-    .metric {
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 16px;
-      background: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
-    }
-    .metric .value { font-size: 28px; font-weight: 800; margin-top: 8px; }
-    .metric .label { font-size: 12px; text-transform: uppercase; color: var(--muted); letter-spacing: .04em; }
+      .metric {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 16px;
+        background: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
+      }
+      .metric .value {
+        font-size: 28px;
+        font-weight: 800;
+        margin-top: 8px;
+      }
+      .metric .label {
+        font-size: 12px;
+        text-transform: uppercase;
+        color: var(--muted);
+        letter-spacing: 0.04em;
+      }
 
-    .table-wrap {
-      overflow: auto;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-    }
+      .table-wrap {
+        overflow: auto;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+      }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 980px;
-      background: white;
-    }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 980px;
+        background: white;
+      }
 
-    th, td {
-      padding: 12px 10px;
-      border-bottom: 1px solid #e6edf5;
-      text-align: left;
-      vertical-align: top;
-      font-size: 13px;
-    }
+      th,
+      td {
+        padding: 12px 10px;
+        border-bottom: 1px solid #e6edf5;
+        text-align: left;
+        vertical-align: top;
+        font-size: 13px;
+      }
 
-    th {
-      background: #f7faff;
-      position: sticky;
-      top: 0;
-      z-index: 1;
-    }
+      th {
+        background: #f7faff;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+      }
 
-    .pill {
-      display: inline-block;
-      padding: 5px 8px;
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 700;
-    }
-    .pill-peer { background: #efe9ff; color: #5b21b6; }
-    .pill-adviser { background: #e7f8ef; color: #0b6b3d; }
+      .pill {
+        display: inline-block;
+        padding: 5px 8px;
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: 700;
+      }
+      .pill-peer {
+        background: #efe9ff;
+        color: #5b21b6;
+      }
+      .pill-adviser {
+        background: #e7f8ef;
+        color: #0b6b3d;
+      }
 
-    .score-line {
-      border: 1px dashed #cfdae7;
-      border-radius: 14px;
-      padding: 12px;
-      background: #fbfdff;
-      margin-bottom: 12px;
-    }
+      .score-line {
+        border: 1px dashed #cfdae7;
+        border-radius: 14px;
+        padding: 12px;
+        background: #fbfdff;
+        margin-bottom: 12px;
+      }
 
-    .score-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 6px;
-    }
+      .score-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 6px;
+      }
 
-    .score-value {
-      font-weight: 800;
-      color: var(--primary-dark);
-      min-width: 64px;
-      text-align: right;
-    }
+      .score-value {
+        font-weight: 800;
+        color: var(--primary-dark);
+        min-width: 64px;
+        text-align: right;
+      }
 
-    .divider {
-      height: 1px;
-      background: #e6edf5;
-      margin: 14px 0;
-    }
+      .divider {
+        height: 1px;
+        background: #e6edf5;
+        margin: 14px 0;
+      }
 
-    .right { text-align: right; }
-    .small { font-size: 12px; }
+      .right {
+        text-align: right;
+      }
+      .small {
+        font-size: 12px;
+      }
 
-    .auth-shell {
-      max-width: 520px;
-      margin: 42px auto;
-    }
+      .auth-shell {
+        max-width: 520px;
+        margin: 42px auto;
+      }
 
-    .footer-note {
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 14px;
-    }
+      .footer-note {
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 14px;
+      }
 
-    @media (max-width: 980px) {
-      .hero, .metric-grid { grid-template-columns: 1fr; }
-      .col-8, .col-6, .col-4, .col-3 { grid-column: span 12; }
-    }
-  </style>
-</head>
-<body>
-  <div class="topbar">
-    <div class="brand">
-      <strong>Compostela National High School</strong>
-      <span>Leadership Award Nomination System • DepEd Order No. 36, s. 2016</span>
-    </div>
-    <div class="top-actions">
-      <button class="btn btn-secondary" id="showNominationBtn">Nomination Form</button>
-      <button class="btn btn-primary" id="showAdminBtn">Admin Login</button>
-      <button class="btn btn-danger hidden" id="logoutBtn">Log-out</button>
-    </div>
-  </div>
-
-  <div class="container">
-    <section id="nominationView">
-      <div class="card hero">
-        <div>
-          <span class="badge">School Use</span>
-          <span class="badge">Secure Admin View</span>
-          <span class="badge">Leadership Award</span>
-          <h1>Leadership Award Nomination Form</h1>
-          <p class="muted">
-            This form is designed for <strong>Compostela National High School</strong> and aligned with the
-            <strong>Leadership Award</strong> under <strong>DepEd Order No. 36, s. 2016</strong>, which recognizes learners who show exemplary ability
-            to lead, motivate others, and organize school or community-benefiting initiatives.
-          </p>
-          <div class="notice">
-            <strong>Instructions:</strong><br />
-            1. Enter the nominee name in <strong>CAPITAL LETTERS</strong> using this format: <strong>SURNAME, GIVEN NAME, MI</strong>.<br />
-            2. Adviser and peer entries are separate. Choose only one rating type per submission.<br />
-            3. Only <strong>5 peer ratings</strong> are allowed per nominee.<br />
-            4. A nominee may appear many times in submissions, but the dashboard will combine all identical nominee names into <strong>one averaged summary rating</strong>.<br />
-            5. Grade 10 nominees may include accomplishments from <strong>Grades 7 to 10</strong>. Grade 12 nominees may include accomplishments from <strong>Grades 11 to 12</strong>.<br />
-            6. You may attach up to <strong>5 files/documents</strong>.
-          </div>
-        </div>
-        <div class="card" style="margin:0; box-shadow:none;">
-          <h3>Weighted Criteria</h3>
-          <p class="small muted">Percentage-based scoring for Leadership Award evaluation.</p>
-          <div class="small">
-            <div><strong>Leadership and Initiative</strong> – 25%</div>
-            <div><strong>Influence and Motivation</strong> – 25%</div>
-            <div><strong>Responsibility and Accountability</strong> – 20%</div>
-            <div><strong>Teamwork and Collaboration</strong> – 15%</div>
-            <div><strong>Contribution to School/Community</strong> – 15%</div>
-          </div>
-          <div class="footer-note">Score per criterion: 0–100%. Total weighted score is also shown in percentage.</div>
-        </div>
+      @media (max-width: 980px) {
+        .hero,
+        .metric-grid {
+          grid-template-columns: 1fr;
+        }
+        .col-8,
+        .col-6,
+        .col-4,
+        .col-3 {
+          grid-column: span 12;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="brand">
+        <strong>Compostela National High School</strong>
+        <span
+          >Leadership Award Nomination System • DepEd Order No. 36, s.
+          2016</span
+        >
       </div>
+      <div class="top-actions">
+        <button class="btn btn-secondary" id="showNominationBtn">
+          Nomination Form
+        </button>
+        <button class="btn btn-primary" id="showAdminBtn">Admin Login</button>
+        <button class="btn btn-danger hidden" id="logoutBtn">Log-out</button>
+      </div>
+    </div>
 
-      <form id="nominationForm" class="card">
-        <h2>Nomination Entry</h2>
-        <div class="grid">
-          <div class="col-6">
-            <label for="nomineeName">Name of Nominee</label>
-            <input id="nomineeName" name="nomineeName" required placeholder="DELA CRUZ, JUAN P." />
-            <div class="hint">Use CAPITAL LETTERS only. Format: SURNAME, GIVEN NAME, MI</div>
-          </div>
-          <div class="col-3">
-            <label for="gradeLevel">Grade Level</label>
-            <select id="gradeLevel" name="gradeLevel" required>
-              <option value="">Select grade level</option>
-              <option value="10">Grade 10</option>
-              <option value="12">Grade 12</option>
-            </select>
-          </div>
-          <div class="col-3">
-            <label for="section">Section</label>
-            <input id="section" name="section" required placeholder="Section" />
-          </div>
-
-          <div class="col-4">
-            <label for="positionHeld">Position Held</label>
-            <input id="positionHeld" name="positionHeld" placeholder="Class Officer / Club Officer / Team Leader" required />
-          </div>
-          <div class="col-4">
-            <label for="organization">Organization / Club</label>
-            <input id="organization" name="organization" placeholder="Name of organization or club" required />
-          </div>
-          <div class="col-4">
-            <label for="schoolYear">School Year</label>
-            <input id="schoolYear" name="schoolYear" placeholder="e.g. 2025-2026" required />
-          </div>
-
-          <div class="col-6">
-            <label for="raterType">Entry Type</label>
-            <select id="raterType" name="raterType" required>
-              <option value="">Select entry type</option>
-              <option value="adviser">Adviser Rating / Nomination</option>
-              <option value="peer">Peer Rating</option>
-            </select>
-            <div class="hint">Only the relevant fields will appear based on your choice.</div>
-          </div>
-          <div class="col-6">
-            <label for="nomineePeriod">Eligible Accomplishment Period</label>
-            <input id="nomineePeriod" name="nomineePeriod" readonly placeholder="Auto-filled based on grade level" />
-          </div>
-
-          <div class="col-12 adviser-only hidden">
-            <div class="notice"><strong>Adviser Entry:</strong> Advisers may nominate and rate the learner. Adviser-only fields are shown below.</div>
-          </div>
-          <div class="col-6 adviser-only hidden">
-            <label for="adviserName">Adviser Name</label>
-            <input id="adviserName" name="adviserName" placeholder="Adviser full name" />
-          </div>
-          <div class="col-6 adviser-only hidden">
-            <label for="adviserRecommendation">Adviser Recommendation</label>
-            <select id="adviserRecommendation" name="adviserRecommendation">
-              <option value="">Select recommendation</option>
-              <option>Strongly Recommend</option>
-              <option>Recommend</option>
-              <option>With Reservation</option>
-              <option>Not Recommended</option>
-            </select>
-          </div>
-
-          <div class="col-12 peer-only hidden">
-            <div class="notice"><strong>Peer Entry:</strong> Only five peer ratings can be accepted for one nominee.</div>
-          </div>
-          <div class="col-6 peer-only hidden">
-            <label for="peerName">Peer Name</label>
-            <input id="peerName" name="peerName" placeholder="Peer full name" />
-          </div>
-          <div class="col-6 peer-only hidden">
-            <label for="peerRelationship">Relationship to Nominee</label>
-            <input id="peerRelationship" name="peerRelationship" placeholder="Classmate / Club mate / Teammate" />
-          </div>
-
-          <div class="col-12">
-            <label for="projects">Major Leadership Projects Initiated or Led</label>
-            <textarea id="projects" name="projects" required placeholder="Describe leadership projects or initiatives."></textarea>
-          </div>
-
-          <div class="col-12">
-            <label for="accomplishments">Leadership Accomplishments within Eligible Period</label>
-            <textarea id="accomplishments" name="accomplishments" required placeholder="For Grade 10: Grades 7–10. For Grade 12: Grades 11–12."></textarea>
-          </div>
-
-          <div class="col-6">
-            <label for="motivationNarrative">How did the nominee motivate or influence others?</label>
-            <textarea id="motivationNarrative" name="motivationNarrative" required></textarea>
-          </div>
-          <div class="col-6">
-            <label for="communityContribution">Contribution to School and/or Community</label>
-            <textarea id="communityContribution" name="communityContribution" required></textarea>
-          </div>
-
-          <div class="col-12">
-            <h3>Percentage-Based Rating</h3>
-            <p class="muted small">Enter ratings in percent. Example: 85 means 85%.</p>
-          </div>
-
-          <div class="col-12">
-            <div class="score-line">
-              <div class="score-head"><label for="leadershipInitiative">Leadership and Initiative (25%)</label><div class="score-value"><span id="leadershipInitiativeVal">0</span>%</div></div>
-              <input type="range" id="leadershipInitiative" min="0" max="100" value="0" />
+    <div class="container">
+      <section id="nominationView">
+        <div class="card hero">
+          <div>
+            <span class="badge">School Use</span>
+            <span class="badge">Secure Admin View</span>
+            <span class="badge">Leadership Award</span>
+            <h1>Leadership Award Nomination Form</h1>
+            <p class="muted">
+              This form is designed for
+              <strong>Compostela National High School</strong> and aligned with
+              the <strong>Leadership Award</strong> under
+              <strong>DepEd Order No. 36, s. 2016</strong>, which recognizes
+              learners who show exemplary ability to lead, motivate others, and
+              organize school or community-benefiting initiatives.
+            </p>
+            <div class="notice">
+              <strong>Instructions:</strong><br />
+              1. Enter the nominee name in
+              <strong>CAPITAL LETTERS</strong> using this format:
+              <strong>SURNAME, GIVEN NAME, MI</strong>.<br />
+              2. Adviser and peer entries are separate. Choose only one rating
+              type per submission.<br />
+              3. Only <strong>5 peer ratings</strong> are allowed per
+              nominee.<br />
+              4. A nominee may appear many times in submissions, but the
+              dashboard will combine all identical nominee names into
+              <strong>one averaged summary rating</strong>.<br />
+              5. Grade 10 nominees may include accomplishments from
+              <strong>Grades 7 to 10</strong>. Grade 12 nominees may include
+              accomplishments from <strong>Grades 11 to 12</strong>.<br />
+              6. You may attach up to <strong>5 files/documents</strong>.
             </div>
-            <div class="score-line">
-              <div class="score-head"><label for="influenceMotivation">Influence and Motivation (25%)</label><div class="score-value"><span id="influenceMotivationVal">0</span>%</div></div>
-              <input type="range" id="influenceMotivation" min="0" max="100" value="0" />
-            </div>
-            <div class="score-line">
-              <div class="score-head"><label for="responsibilityAccountability">Responsibility and Accountability (20%)</label><div class="score-value"><span id="responsibilityAccountabilityVal">0</span>%</div></div>
-              <input type="range" id="responsibilityAccountability" min="0" max="100" value="0" />
-            </div>
-            <div class="score-line">
-              <div class="score-head"><label for="teamworkCollaboration">Teamwork and Collaboration (15%)</label><div class="score-value"><span id="teamworkCollaborationVal">0</span>%</div></div>
-              <input type="range" id="teamworkCollaboration" min="0" max="100" value="0" />
-            </div>
-            <div class="score-line">
-              <div class="score-head"><label for="schoolCommunityContribution">Contribution to School/Community (15%)</label><div class="score-value"><span id="schoolCommunityContributionVal">0</span>%</div></div>
-              <input type="range" id="schoolCommunityContribution" min="0" max="100" value="0" />
-            </div>
-            <div class="notice"><strong>Computed Weighted Rating:</strong> <span id="weightedPreview">0.00%</span></div>
           </div>
-
-          <div class="col-12 adviser-only hidden">
-            <label for="adviserRemarks">Adviser Remarks</label>
-            <textarea id="adviserRemarks" name="adviserRemarks"></textarea>
-          </div>
-          <div class="col-12 peer-only hidden">
-            <label for="peerRemarks">Peer Remarks</label>
-            <textarea id="peerRemarks" name="peerRemarks"></textarea>
-          </div>
-
-          <div class="col-12">
-            <label for="attachments">Attach up to 5 files/documents</label>
-            <input type="file" id="attachments" name="attachments" multiple />
-            <div class="hint">Accepted locally in this browser demo: up to 5 files. For live online deployment, connect this form to a secure server or cloud storage.</div>
-            <div id="attachmentNote" class="hint"></div>
-          </div>
-
-          <div class="col-12 inline">
-            <input type="checkbox" id="certify" required />
-            <label for="certify" style="margin:0; font-weight:600;">I certify that the information provided is true and accurate.</label>
+          <div class="card" style="margin: 0; box-shadow: none">
+            <h3>Weighted Criteria</h3>
+            <p class="small muted">
+              Percentage-based scoring for Leadership Award evaluation.
+            </p>
+            <div class="small">
+              <div><strong>Leadership and Initiative</strong> – 25%</div>
+              <div><strong>Influence and Motivation</strong> – 25%</div>
+              <div>
+                <strong>Responsibility and Accountability</strong> – 20%
+              </div>
+              <div><strong>Teamwork and Collaboration</strong> – 15%</div>
+              <div><strong>Contribution to School/Community</strong> – 15%</div>
+            </div>
+            <div class="footer-note">
+              Score per criterion: 0–100%. Total weighted score is also shown in
+              percentage.
+            </div>
           </div>
         </div>
 
-        <div class="actions">
-          <button type="submit" class="btn btn-success">Submit Nomination / Rating</button>
-          <button type="reset" class="btn btn-secondary" id="resetFormBtn">Clear Form</button>
-        </div>
-        <div id="formMessage"></div>
-        <div class="footer-note">Important: The admin dashboard is not shown here. It can only be accessed through the separate admin login.</div>
-      </form>
-    </section>
+        <form id="nominationForm" class="card">
+          <h2>Nomination Entry</h2>
+          <div class="grid">
+            <div class="col-6">
+              <label for="nomineeName">Name of Nominee</label>
+              <input
+                id="nomineeName"
+                name="nomineeName"
+                required
+                placeholder="DELA CRUZ, JUAN P."
+              />
+              <div class="hint">
+                Use CAPITAL LETTERS only. Format: SURNAME, GIVEN NAME, MI
+              </div>
+            </div>
+            <div class="col-3">
+              <label for="gradeLevel">Grade Level</label>
+              <select id="gradeLevel" name="gradeLevel" required>
+                <option value="">Select grade level</option>
+                <option value="10">Grade 10</option>
+                <option value="12">Grade 12</option>
+              </select>
+            </div>
+            <div class="col-3">
+              <label for="section">Section</label>
+              <input
+                id="section"
+                name="section"
+                required
+                placeholder="Section"
+              />
+            </div>
 
-    <section id="adminLoginView" class="hidden">
-      <div class="auth-shell">
+            <div class="col-4">
+              <label for="positionHeld">Position Held</label>
+              <input
+                id="positionHeld"
+                name="positionHeld"
+                placeholder="Class Officer / Club Officer / Team Leader"
+                required
+              />
+            </div>
+            <div class="col-4">
+              <label for="organization">Organization / Club</label>
+              <input
+                id="organization"
+                name="organization"
+                placeholder="Name of organization or club"
+                required
+              />
+            </div>
+            <div class="col-4">
+              <label for="schoolYear">School Year</label>
+              <input
+                id="schoolYear"
+                name="schoolYear"
+                placeholder="e.g. 2025-2026"
+                required
+              />
+            </div>
+
+            <div class="col-6">
+              <label for="raterType">Entry Type</label>
+              <select id="raterType" name="raterType" required>
+                <option value="">Select entry type</option>
+                <option value="adviser">Adviser Rating / Nomination</option>
+                <option value="peer">Peer Rating</option>
+              </select>
+              <div class="hint">
+                Only the relevant fields will appear based on your choice.
+              </div>
+            </div>
+            <div class="col-6">
+              <label for="nomineePeriod">Eligible Accomplishment Period</label>
+              <input
+                id="nomineePeriod"
+                name="nomineePeriod"
+                readonly
+                placeholder="Auto-filled based on grade level"
+              />
+            </div>
+
+            <div class="col-12 adviser-only hidden">
+              <div class="notice">
+                <strong>Adviser Entry:</strong> Advisers may nominate and rate
+                the learner. Adviser-only fields are shown below.
+              </div>
+            </div>
+            <div class="col-6 adviser-only hidden">
+              <label for="adviserName">Adviser Name</label>
+              <input
+                id="adviserName"
+                name="adviserName"
+                placeholder="Adviser full name"
+              />
+            </div>
+            <div class="col-6 adviser-only hidden">
+              <label for="adviserRecommendation">Adviser Recommendation</label>
+              <select id="adviserRecommendation" name="adviserRecommendation">
+                <option value="">Select recommendation</option>
+                <option>Strongly Recommend</option>
+                <option>Recommend</option>
+                <option>With Reservation</option>
+                <option>Not Recommended</option>
+              </select>
+            </div>
+
+            <div class="col-12 peer-only hidden">
+              <div class="notice">
+                <strong>Peer Entry:</strong> Only five peer ratings can be
+                accepted for one nominee.
+              </div>
+            </div>
+            <div class="col-6 peer-only hidden">
+              <label for="peerName">Peer Name</label>
+              <input
+                id="peerName"
+                name="peerName"
+                placeholder="Peer full name"
+              />
+            </div>
+            <div class="col-6 peer-only hidden">
+              <label for="peerRelationship">Relationship to Nominee</label>
+              <input
+                id="peerRelationship"
+                name="peerRelationship"
+                placeholder="Classmate / Club mate / Teammate"
+              />
+            </div>
+
+            <div class="col-12">
+              <label for="projects"
+                >Major Leadership Projects Initiated or Led</label
+              >
+              <textarea
+                id="projects"
+                name="projects"
+                required
+                placeholder="Describe leadership projects or initiatives."
+              ></textarea>
+            </div>
+
+            <div class="col-12">
+              <label for="accomplishments"
+                >Leadership Accomplishments within Eligible Period</label
+              >
+              <textarea
+                id="accomplishments"
+                name="accomplishments"
+                required
+                placeholder="For Grade 10: Grades 7–10. For Grade 12: Grades 11–12."
+              ></textarea>
+            </div>
+
+            <div class="col-6">
+              <label for="motivationNarrative"
+                >How did the nominee motivate or influence others?</label
+              >
+              <textarea
+                id="motivationNarrative"
+                name="motivationNarrative"
+                required
+              ></textarea>
+            </div>
+            <div class="col-6">
+              <label for="communityContribution"
+                >Contribution to School and/or Community</label
+              >
+              <textarea
+                id="communityContribution"
+                name="communityContribution"
+                required
+              ></textarea>
+            </div>
+
+            <div class="col-12">
+              <h3>Percentage-Based Rating</h3>
+              <p class="muted small">
+                Enter ratings in percent. Example: 85 means 85%.
+              </p>
+            </div>
+
+            <div class="col-12">
+              <div class="score-line">
+                <div class="score-head">
+                  <label for="leadershipInitiative"
+                    >Leadership and Initiative (25%)</label
+                  >
+                  <div class="score-value">
+                    <span id="leadershipInitiativeVal">0</span>%
+                  </div>
+                </div>
+                <input
+                  type="range"
+                  id="leadershipInitiative"
+                  min="0"
+                  max="100"
+                  value="0"
+                />
+              </div>
+              <div class="score-line">
+                <div class="score-head">
+                  <label for="influenceMotivation"
+                    >Influence and Motivation (25%)</label
+                  >
+                  <div class="score-value">
+                    <span id="influenceMotivationVal">0</span>%
+                  </div>
+                </div>
+                <input
+                  type="range"
+                  id="influenceMotivation"
+                  min="0"
+                  max="100"
+                  value="0"
+                />
+              </div>
+              <div class="score-line">
+                <div class="score-head">
+                  <label for="responsibilityAccountability"
+                    >Responsibility and Accountability (20%)</label
+                  >
+                  <div class="score-value">
+                    <span id="responsibilityAccountabilityVal">0</span>%
+                  </div>
+                </div>
+                <input
+                  type="range"
+                  id="responsibilityAccountability"
+                  min="0"
+                  max="100"
+                  value="0"
+                />
+              </div>
+              <div class="score-line">
+                <div class="score-head">
+                  <label for="teamworkCollaboration"
+                    >Teamwork and Collaboration (15%)</label
+                  >
+                  <div class="score-value">
+                    <span id="teamworkCollaborationVal">0</span>%
+                  </div>
+                </div>
+                <input
+                  type="range"
+                  id="teamworkCollaboration"
+                  min="0"
+                  max="100"
+                  value="0"
+                />
+              </div>
+              <div class="score-line">
+                <div class="score-head">
+                  <label for="schoolCommunityContribution"
+                    >Contribution to School/Community (15%)</label
+                  >
+                  <div class="score-value">
+                    <span id="schoolCommunityContributionVal">0</span>%
+                  </div>
+                </div>
+                <input
+                  type="range"
+                  id="schoolCommunityContribution"
+                  min="0"
+                  max="100"
+                  value="0"
+                />
+              </div>
+              <div class="notice">
+                <strong>Computed Weighted Rating:</strong>
+                <span id="weightedPreview">0.00%</span>
+              </div>
+            </div>
+
+            <div class="col-12 adviser-only hidden">
+              <label for="adviserRemarks">Adviser Remarks</label>
+              <textarea id="adviserRemarks" name="adviserRemarks"></textarea>
+            </div>
+            <div class="col-12 peer-only hidden">
+              <label for="peerRemarks">Peer Remarks</label>
+              <textarea id="peerRemarks" name="peerRemarks"></textarea>
+            </div>
+
+            <div class="col-12">
+              <label for="attachments">Attach up to 5 files/documents</label>
+              <input type="file" id="attachments" name="attachments" multiple />
+              <div class="hint">
+                Accepted locally in this browser demo: up to 5 files. For live
+                online deployment, connect this form to a secure server or cloud
+                storage.
+              </div>
+              <div id="attachmentNote" class="hint"></div>
+            </div>
+
+            <div class="col-12 inline">
+              <input type="checkbox" id="certify" required />
+              <label for="certify" style="margin: 0; font-weight: 600"
+                >I certify that the information provided is true and
+                accurate.</label
+              >
+            </div>
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="btn btn-success">
+              Submit Nomination / Rating
+            </button>
+            <button type="reset" class="btn btn-secondary" id="resetFormBtn">
+              Clear Form
+            </button>
+          </div>
+          <div id="formMessage"></div>
+          <div class="footer-note">
+            Important: The admin dashboard is not shown here. It can only be
+            accessed through the separate admin login.
+          </div>
+        </form>
+      </section>
+
+      <section id="adminLoginView" class="hidden">
+        <div class="auth-shell">
+          <div class="card">
+            <h2>Admin Login</h2>
+            <p class="muted">
+              Only the authorized administrator can view the secure dashboard
+              and summary.
+            </p>
+            <div class="grid">
+              <div class="col-12">
+                <label for="adminUsername">Username</label>
+                <input
+                  id="adminUsername"
+                  autocomplete="username"
+                  placeholder="Admin username"
+                />
+              </div>
+              <div class="col-12">
+                <label for="adminPassword">Password</label>
+                <input
+                  id="adminPassword"
+                  type="password"
+                  autocomplete="current-password"
+                  placeholder="Password"
+                />
+              </div>
+            </div>
+            <div class="actions">
+              <button class="btn btn-primary" id="loginBtn">Log-in</button>
+              <button class="btn btn-warning" id="toggleResetBtn">
+                Reset Password
+              </button>
+            </div>
+            <div id="loginMessage"></div>
+          </div>
+
+          <div class="card hidden" id="resetCard">
+            <h3>Reset Admin Password</h3>
+            <p class="muted small">
+              For this standalone version, enter the reset key to change the
+              admin password.
+            </p>
+            <div class="grid">
+              <div class="col-12">
+                <label for="resetUsername">Username</label>
+                <input id="resetUsername" placeholder="admin" />
+              </div>
+              <div class="col-12">
+                <label for="resetKey">Reset Key</label>
+                <input
+                  id="resetKey"
+                  type="password"
+                  placeholder="Enter reset key"
+                />
+              </div>
+              <div class="col-12">
+                <label for="newPassword">New Password</label>
+                <input
+                  id="newPassword"
+                  type="password"
+                  placeholder="Enter new password"
+                />
+              </div>
+            </div>
+            <div class="actions">
+              <button class="btn btn-success" id="resetPasswordBtn">
+                Save New Password
+              </button>
+            </div>
+            <div id="resetMessage"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="adminDashboardView" class="hidden">
         <div class="card">
-          <h2>Admin Login</h2>
-          <p class="muted">Only the authorized administrator can view the secure dashboard and summary.</p>
-          <div class="grid">
-            <div class="col-12">
-              <label for="adminUsername">Username</label>
-              <input id="adminUsername" autocomplete="username" placeholder="Admin username" />
+          <h2>Secure Admin Dashboard</h2>
+          <p class="muted">
+            This area is visible only after valid admin login. The nomination
+            form does not show this dashboard.
+          </p>
+          <div class="metric-grid">
+            <div class="metric">
+              <div class="label">Unique Nominees</div>
+              <div class="value" id="metricNominees">0</div>
             </div>
-            <div class="col-12">
-              <label for="adminPassword">Password</label>
-              <input id="adminPassword" type="password" autocomplete="current-password" placeholder="Password" />
+            <div class="metric">
+              <div class="label">Total Submissions</div>
+              <div class="value" id="metricSubmissions">0</div>
+            </div>
+            <div class="metric">
+              <div class="label">Peer Entries</div>
+              <div class="value" id="metricPeer">0</div>
+            </div>
+            <div class="metric">
+              <div class="label">Adviser Entries</div>
+              <div class="value" id="metricAdviser">0</div>
             </div>
           </div>
+
           <div class="actions">
-            <button class="btn btn-primary" id="loginBtn">Log-in</button>
-            <button class="btn btn-warning" id="toggleResetBtn">Reset Password</button>
-          </div>
-          <div id="loginMessage"></div>
-        </div>
-
-        <div class="card hidden" id="resetCard">
-          <h3>Reset Admin Password</h3>
-          <p class="muted small">For this standalone version, enter the reset key to change the admin password.</p>
-          <div class="grid">
-            <div class="col-12">
-              <label for="resetUsername">Username</label>
-              <input id="resetUsername" placeholder="admin" />
-            </div>
-            <div class="col-12">
-              <label for="resetKey">Reset Key</label>
-              <input id="resetKey" type="password" placeholder="Enter reset key" />
-            </div>
-            <div class="col-12">
-              <label for="newPassword">New Password</label>
-              <input id="newPassword" type="password" placeholder="Enter new password" />
-            </div>
-          </div>
-          <div class="actions">
-            <button class="btn btn-success" id="resetPasswordBtn">Save New Password</button>
-          </div>
-          <div id="resetMessage"></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="adminDashboardView" class="hidden">
-      <div class="card">
-        <h2>Secure Admin Dashboard</h2>
-        <p class="muted">This area is visible only after valid admin login. The nomination form does not show this dashboard.</p>
-        <div class="metric-grid">
-          <div class="metric">
-            <div class="label">Unique Nominees</div>
-            <div class="value" id="metricNominees">0</div>
-          </div>
-          <div class="metric">
-            <div class="label">Total Submissions</div>
-            <div class="value" id="metricSubmissions">0</div>
-          </div>
-          <div class="metric">
-            <div class="label">Peer Entries</div>
-            <div class="value" id="metricPeer">0</div>
-          </div>
-          <div class="metric">
-            <div class="label">Adviser Entries</div>
-            <div class="value" id="metricAdviser">0</div>
+            <button class="btn btn-secondary" id="refreshDashboardBtn">
+              Refresh Summary
+            </button>
+            <button class="btn btn-primary" id="downloadJsonBtn">
+              Download JSON Backup
+            </button>
+            <button class="btn btn-danger" id="clearAllDataBtn">
+              Clear All Stored Data
+            </button>
           </div>
         </div>
 
-        <div class="actions">
-          <button class="btn btn-secondary" id="refreshDashboardBtn">Refresh Summary</button>
-          <button class="btn btn-primary" id="downloadJsonBtn">Download JSON Backup</button>
-          <button class="btn btn-danger" id="clearAllDataBtn">Clear All Stored Data</button>
+        <div class="card">
+          <h3>Nominee Summary (Combined by Identical Nominee Name)</h3>
+          <p class="muted small">
+            All submissions with the same nominee name are grouped into one
+            summary. Peer entries are limited to five per nominee. Rank is based
+            on the combined average weighted score.
+          </p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Nominee</th>
+                  <th>Grade</th>
+                  <th>Section</th>
+                  <th>Total Entries</th>
+                  <th>Peer Count</th>
+                  <th>Adviser Count</th>
+                  <th>Avg. Leadership 25%</th>
+                  <th>Avg. Influence 25%</th>
+                  <th>Avg. Responsibility 20%</th>
+                  <th>Avg. Teamwork 15%</th>
+                  <th>Avg. Contribution 15%</th>
+                  <th>Final Weighted Avg.</th>
+                  <th>Attachments</th>
+                </tr>
+              </thead>
+              <tbody id="summaryTableBody"></tbody>
+            </table>
+          </div>
         </div>
-      </div>
 
-      <div class="card">
-        <h3>Nominee Summary (Combined by Identical Nominee Name)</h3>
-        <p class="muted small">All submissions with the same nominee name are grouped into one summary. Peer entries are limited to five per nominee. Rank is based on the combined average weighted score.</p>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Rank</th>
-                <th>Nominee</th>
-                <th>Grade</th>
-                <th>Section</th>
-                <th>Total Entries</th>
-                <th>Peer Count</th>
-                <th>Adviser Count</th>
-                <th>Avg. Leadership 25%</th>
-                <th>Avg. Influence 25%</th>
-                <th>Avg. Responsibility 20%</th>
-                <th>Avg. Teamwork 15%</th>
-                <th>Avg. Contribution 15%</th>
-                <th>Final Weighted Avg.</th>
-                <th>Attachments</th>
-              </tr>
-            </thead>
-            <tbody id="summaryTableBody"></tbody>
-          </table>
+        <div class="card">
+          <h3>Detailed Submission Log</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Nominee</th>
+                  <th>Type</th>
+                  <th>Rater</th>
+                  <th>Weighted Score</th>
+                  <th>Recommendation</th>
+                  <th>Files</th>
+                </tr>
+              </thead>
+              <tbody id="detailTableBody"></tbody>
+            </table>
+          </div>
         </div>
-      </div>
+      </section>
+    </div>
 
-      <div class="card">
-        <h3>Detailed Submission Log</h3>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>Nominee</th>
-                <th>Type</th>
-                <th>Rater</th>
-                <th>Weighted Score</th>
-                <th>Recommendation</th>
-                <th>Files</th>
-              </tr>
-            </thead>
-            <tbody id="detailTableBody"></tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <script>
-    const STORAGE_KEYS = {
-      submissions: 'cnhs_leadership_award_submissions_v1',
-      auth: 'cnhs_admin_auth_v1'
-    };
-
-    const DEFAULT_AUTH = {
-      username: 'admin',
-      password: 'CNHS-Leadership2026!',
-      resetKey: 'CNHS-RESET-2026'
-    };
-
-    const nominationView = document.getElementById('nominationView');
-    const adminLoginView = document.getElementById('adminLoginView');
-    const adminDashboardView = document.getElementById('adminDashboardView');
-    const logoutBtn = document.getElementById('logoutBtn');
-
-    const showNominationBtn = document.getElementById('showNominationBtn');
-    const showAdminBtn = document.getElementById('showAdminBtn');
-
-    const nominationForm = document.getElementById('nominationForm');
-    const formMessage = document.getElementById('formMessage');
-    const attachmentNote = document.getElementById('attachmentNote');
-
-    const raterType = document.getElementById('raterType');
-    const gradeLevel = document.getElementById('gradeLevel');
-    const nomineePeriod = document.getElementById('nomineePeriod');
-    const attachmentsInput = document.getElementById('attachments');
-    const nomineeNameInput = document.getElementById('nomineeName');
-
-    const scoreFields = [
-      { id: 'leadershipInitiative', label: 'leadershipInitiativeVal' },
-      { id: 'influenceMotivation', label: 'influenceMotivationVal' },
-      { id: 'responsibilityAccountability', label: 'responsibilityAccountabilityVal' },
-      { id: 'teamworkCollaboration', label: 'teamworkCollaborationVal' },
-      { id: 'schoolCommunityContribution', label: 'schoolCommunityContributionVal' }
-    ];
-
-    function ensureAuthSeed() {
-      if (!localStorage.getItem(STORAGE_KEYS.auth)) {
-        localStorage.setItem(STORAGE_KEYS.auth, JSON.stringify(DEFAULT_AUTH));
-      }
-      if (!localStorage.getItem(STORAGE_KEYS.submissions)) {
-        localStorage.setItem(STORAGE_KEYS.submissions, JSON.stringify([]));
-      }
-    }
-
-    function getAuth() {
-      return JSON.parse(localStorage.getItem(STORAGE_KEYS.auth) || JSON.stringify(DEFAULT_AUTH));
-    }
-
-    function getSubmissions() {
-      return JSON.parse(localStorage.getItem(STORAGE_KEYS.submissions) || '[]');
-    }
-
-    function saveSubmissions(data) {
-      localStorage.setItem(STORAGE_KEYS.submissions, JSON.stringify(data));
-    }
-
-    function setView(view) {
-      nominationView.classList.add('hidden');
-      adminLoginView.classList.add('hidden');
-      adminDashboardView.classList.add('hidden');
-      logoutBtn.classList.add('hidden');
-
-      if (view === 'nomination') {
-        nominationView.classList.remove('hidden');
-      }
-      if (view === 'login') {
-        adminLoginView.classList.remove('hidden');
-      }
-      if (view === 'dashboard') {
-        adminDashboardView.classList.remove('hidden');
-        logoutBtn.classList.remove('hidden');
-      }
-    }
-
-    function showMessage(target, type, message) {
-      target.innerHTML = `<div class="${type}">${message}</div>`;
-    }
-
-    function normalizeNomineeName(name) {
-      return String(name || '').trim().replace(/\s+/g, ' ').toUpperCase();
-    }
-
-    function updateEligiblePeriod() {
-      const level = gradeLevel.value;
-      if (level === '10') nomineePeriod.value = 'Eligible accomplishments: Grade 7 to Grade 10';
-      else if (level === '12') nomineePeriod.value = 'Eligible accomplishments: Grade 11 to Grade 12';
-      else nomineePeriod.value = '';
-    }
-
-    function toggleRaterFields() {
-      const adviserFields = document.querySelectorAll('.adviser-only');
-      const peerFields = document.querySelectorAll('.peer-only');
-      adviserFields.forEach(el => el.classList.add('hidden'));
-      peerFields.forEach(el => el.classList.add('hidden'));
-
-      if (raterType.value === 'adviser') adviserFields.forEach(el => el.classList.remove('hidden'));
-      if (raterType.value === 'peer') peerFields.forEach(el => el.classList.remove('hidden'));
-    }
-
-    function updateScorePreview() {
-      scoreFields.forEach(field => {
-        const input = document.getElementById(field.id);
-        const label = document.getElementById(field.label);
-        label.textContent = input.value;
-      });
-
-      const leadership = +document.getElementById('leadershipInitiative').value || 0;
-      const influence = +document.getElementById('influenceMotivation').value || 0;
-      const responsibility = +document.getElementById('responsibilityAccountability').value || 0;
-      const teamwork = +document.getElementById('teamworkCollaboration').value || 0;
-      const contribution = +document.getElementById('schoolCommunityContribution').value || 0;
-
-      const weighted = leadership * 0.25 + influence * 0.25 + responsibility * 0.20 + teamwork * 0.15 + contribution * 0.15;
-      document.getElementById('weightedPreview').textContent = `${weighted.toFixed(2)}%`;
-      return weighted;
-    }
-
-    function validateNameFormat(name) {
-      const clean = normalizeNomineeName(name);
-      const pattern = /^[A-Z .'-]+,\s[A-Z .'-]+(\s[A-Z]\.)?$/;
-      return pattern.test(clean);
-    }
-
-    attachmentsInput.addEventListener('change', () => {
-      const count = attachmentsInput.files.length;
-      if (count > 5) {
-        attachmentsInput.value = '';
-        attachmentNote.textContent = 'Only up to 5 files are allowed.';
-      } else {
-        attachmentNote.textContent = count ? `${count} file(s) selected.` : '';
-      }
-    });
-
-    scoreFields.forEach(field => document.getElementById(field.id).addEventListener('input', updateScorePreview));
-    gradeLevel.addEventListener('change', updateEligiblePeriod);
-    raterType.addEventListener('change', toggleRaterFields);
-
-    nominationForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      formMessage.innerHTML = '';
-
-      const nomineeName = normalizeNomineeName(nomineeNameInput.value);
-      nomineeNameInput.value = nomineeName;
-
-      if (!validateNameFormat(nomineeName)) {
-        showMessage(formMessage, 'error', 'Nominee name must be in CAPITAL LETTERS and follow this format: SURNAME, GIVEN NAME, MI');
-        return;
-      }
-
-      if (attachmentsInput.files.length > 5) {
-        showMessage(formMessage, 'error', 'Only 5 attachments are allowed.');
-        return;
-      }
-
-      const type = raterType.value;
-      if (!type) {
-        showMessage(formMessage, 'error', 'Please select either Adviser Rating / Nomination or Peer Rating.');
-        return;
-      }
-
-      const submissions = getSubmissions();
-      const existingPeerCount = submissions.filter(s => s.nomineeName === nomineeName && s.raterType === 'peer').length;
-      if (type === 'peer' && existingPeerCount >= 5) {
-        showMessage(formMessage, 'error', 'This nominee already has 5 peer ratings. No additional peer entry can be accepted.');
-        return;
-      }
-
-      const fileList = Array.from(attachmentsInput.files || []).map(file => ({
-        name: file.name,
-        size: file.size,
-        type: file.type || 'unknown'
-      }));
-
-      const payload = {
-        id: crypto.randomUUID(),
-        submittedAt: new Date().toLocaleString(),
-        nomineeName,
-        gradeLevel: document.getElementById('gradeLevel').value,
-        section: document.getElementById('section').value.trim(),
-        positionHeld: document.getElementById('positionHeld').value.trim(),
-        organization: document.getElementById('organization').value.trim(),
-        schoolYear: document.getElementById('schoolYear').value.trim(),
-        accomplishmentPeriod: document.getElementById('nomineePeriod').value.trim(),
-        raterType: type,
-        adviserName: document.getElementById('adviserName').value.trim(),
-        adviserRecommendation: document.getElementById('adviserRecommendation').value,
-        adviserRemarks: document.getElementById('adviserRemarks').value.trim(),
-        peerName: document.getElementById('peerName').value.trim(),
-        peerRelationship: document.getElementById('peerRelationship').value.trim(),
-        peerRemarks: document.getElementById('peerRemarks').value.trim(),
-        projects: document.getElementById('projects').value.trim(),
-        accomplishments: document.getElementById('accomplishments').value.trim(),
-        motivationNarrative: document.getElementById('motivationNarrative').value.trim(),
-        communityContribution: document.getElementById('communityContribution').value.trim(),
-        leadershipInitiative: +document.getElementById('leadershipInitiative').value,
-        influenceMotivation: +document.getElementById('influenceMotivation').value,
-        responsibilityAccountability: +document.getElementById('responsibilityAccountability').value,
-        teamworkCollaboration: +document.getElementById('teamworkCollaboration').value,
-        schoolCommunityContribution: +document.getElementById('schoolCommunityContribution').value,
-        weightedScore: updateScorePreview(),
-        attachments: fileList
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyDLebjG2CVFWKMMbOj4JpdaFsSI6Qx4FlI",
+        authDomain: "cnhs-leadership-award.firebaseapp.com",
+        projectId: "cnhs-leadership-award",
+        storageBucket: "cnhs-leadership-award.firebasestorage.app",
+        messagingSenderId: "496591251903",
+        appId: "1:496591251903:web:fb4719ac99d09c7a6e590a",
+        measurementId: "G-N60JRFQER7",
       };
 
-      submissions.push(payload);
-      saveSubmissions(submissions);
-      nominationForm.reset();
-      nomineePeriod.value = '';
-      toggleRaterFields();
-      updateScorePreview();
-      attachmentNote.textContent = '';
-      showMessage(formMessage, 'success', 'Submission saved successfully. The admin dashboard can review the summarized results securely.');
-    });
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
 
-    document.getElementById('resetFormBtn').addEventListener('click', () => {
-      formMessage.innerHTML = '';
-      nomineePeriod.value = '';
-      attachmentNote.textContent = '';
-      toggleRaterFields();
-      updateScorePreview();
-    });
+      const STORAGE_KEYS = {
+        submissions: "cnhs_leadership_award_submissions_v1",
+        auth: "cnhs_admin_auth_v1",
+      };
 
-    showNominationBtn.addEventListener('click', () => setView('nomination'));
-    showAdminBtn.addEventListener('click', () => setView('login'));
-    logoutBtn.addEventListener('click', () => {
-      sessionStorage.removeItem('cnhs_admin_logged_in');
-      setView('login');
-    });
+      const DEFAULT_AUTH = {
+        username: "admin",
+        password: "CNHS-Leadership2026!",
+        resetKey: "CNHS-RESET-2026",
+      };
 
-    document.getElementById('toggleResetBtn').addEventListener('click', () => {
-      document.getElementById('resetCard').classList.toggle('hidden');
-    });
+      const nominationView = document.getElementById("nominationView");
+      const adminLoginView = document.getElementById("adminLoginView");
+      const adminDashboardView = document.getElementById("adminDashboardView");
+      const logoutBtn = document.getElementById("logoutBtn");
 
-    document.getElementById('loginBtn').addEventListener('click', () => {
-      const username = document.getElementById('adminUsername').value.trim();
-      const password = document.getElementById('adminPassword').value;
-      const auth = getAuth();
+      const showNominationBtn = document.getElementById("showNominationBtn");
+      const showAdminBtn = document.getElementById("showAdminBtn");
 
-      if (username === auth.username && password === auth.password) {
-        sessionStorage.setItem('cnhs_admin_logged_in', 'true');
-        showMessage(document.getElementById('loginMessage'), 'success', 'Login successful. Opening secure admin dashboard.');
-        renderDashboard();
-        setView('dashboard');
-      } else {
-        showMessage(document.getElementById('loginMessage'), 'error', 'Invalid username or password.');
-      }
-    });
+      const nominationForm = document.getElementById("nominationForm");
+      const formMessage = document.getElementById("formMessage");
+      const attachmentNote = document.getElementById("attachmentNote");
 
-    document.getElementById('resetPasswordBtn').addEventListener('click', () => {
-      const username = document.getElementById('resetUsername').value.trim();
-      const resetKey = document.getElementById('resetKey').value;
-      const newPassword = document.getElementById('newPassword').value;
-      const auth = getAuth();
+      const raterType = document.getElementById("raterType");
+      const gradeLevel = document.getElementById("gradeLevel");
+      const nomineePeriod = document.getElementById("nomineePeriod");
+      const attachmentsInput = document.getElementById("attachments");
+      const nomineeNameInput = document.getElementById("nomineeName");
 
-      if (username !== auth.username || resetKey !== auth.resetKey) {
-        showMessage(document.getElementById('resetMessage'), 'error', 'Invalid username or reset key.');
-        return;
-      }
-      if (!newPassword || newPassword.length < 8) {
-        showMessage(document.getElementById('resetMessage'), 'error', 'New password must be at least 8 characters long.');
-        return;
-      }
-      localStorage.setItem(STORAGE_KEYS.auth, JSON.stringify({ ...auth, password: newPassword }));
-      showMessage(document.getElementById('resetMessage'), 'success', 'Admin password updated successfully.');
-    });
+      const scoreFields = [
+        { id: "leadershipInitiative", label: "leadershipInitiativeVal" },
+        { id: "influenceMotivation", label: "influenceMotivationVal" },
+        {
+          id: "responsibilityAccountability",
+          label: "responsibilityAccountabilityVal",
+        },
+        { id: "teamworkCollaboration", label: "teamworkCollaborationVal" },
+        {
+          id: "schoolCommunityContribution",
+          label: "schoolCommunityContributionVal",
+        },
+      ];
 
-    function groupSubmissions(submissions) {
-      const map = new Map();
-
-      submissions.forEach(item => {
-        const key = item.nomineeName;
-        if (!map.has(key)) {
-          map.set(key, {
-            nomineeName: item.nomineeName,
-            gradeLevel: item.gradeLevel,
-            section: item.section,
-            entries: 0,
-            peerCount: 0,
-            adviserCount: 0,
-            leadershipInitiative: 0,
-            influenceMotivation: 0,
-            responsibilityAccountability: 0,
-            teamworkCollaboration: 0,
-            schoolCommunityContribution: 0,
-            weightedScore: 0,
-            attachmentCount: 0
-          });
+      function ensureAuthSeed() {
+        if (!localStorage.getItem(STORAGE_KEYS.auth)) {
+          localStorage.setItem(STORAGE_KEYS.auth, JSON.stringify(DEFAULT_AUTH));
         }
+        if (!localStorage.getItem(STORAGE_KEYS.submissions)) {
+          localStorage.setItem(STORAGE_KEYS.submissions, JSON.stringify([]));
+        }
+      }
 
-        const row = map.get(key);
-        row.entries += 1;
-        row.peerCount += item.raterType === 'peer' ? 1 : 0;
-        row.adviserCount += item.raterType === 'adviser' ? 1 : 0;
-        row.leadershipInitiative += item.leadershipInitiative;
-        row.influenceMotivation += item.influenceMotivation;
-        row.responsibilityAccountability += item.responsibilityAccountability;
-        row.teamworkCollaboration += item.teamworkCollaboration;
-        row.schoolCommunityContribution += item.schoolCommunityContribution;
-        row.weightedScore += item.weightedScore;
-        row.attachmentCount += (item.attachments || []).length;
+      function getAuth() {
+        return JSON.parse(
+          localStorage.getItem(STORAGE_KEYS.auth) ||
+            JSON.stringify(DEFAULT_AUTH),
+        );
+      }
+
+      async function saveSubmission(payload) {
+        try {
+          await db.collection("leadership_nominations").add(payload);
+
+          showMessage(formMessage, "success", "Submission saved successfully.");
+        } catch (error) {
+          showMessage(formMessage, "error", error.message);
+        }
+      }
+
+      function setView(view) {
+        nominationView.classList.add("hidden");
+        adminLoginView.classList.add("hidden");
+        adminDashboardView.classList.add("hidden");
+        logoutBtn.classList.add("hidden");
+
+        if (view === "nomination") {
+          nominationView.classList.remove("hidden");
+        }
+        if (view === "login") {
+          adminLoginView.classList.remove("hidden");
+        }
+        if (view === "dashboard") {
+          adminDashboardView.classList.remove("hidden");
+          logoutBtn.classList.remove("hidden");
+        }
+      }
+
+      function showMessage(target, type, message) {
+        target.innerHTML = `<div class="${type}">${message}</div>`;
+      }
+
+      function normalizeNomineeName(name) {
+        return String(name || "")
+          .trim()
+          .replace(/\s+/g, " ")
+          .toUpperCase();
+      }
+
+      function updateEligiblePeriod() {
+        const level = gradeLevel.value;
+        if (level === "10")
+          nomineePeriod.value = "Eligible accomplishments: Grade 7 to Grade 10";
+        else if (level === "12")
+          nomineePeriod.value =
+            "Eligible accomplishments: Grade 11 to Grade 12";
+        else nomineePeriod.value = "";
+      }
+
+      function toggleRaterFields() {
+        const adviserFields = document.querySelectorAll(".adviser-only");
+        const peerFields = document.querySelectorAll(".peer-only");
+        adviserFields.forEach((el) => el.classList.add("hidden"));
+        peerFields.forEach((el) => el.classList.add("hidden"));
+
+        if (raterType.value === "adviser")
+          adviserFields.forEach((el) => el.classList.remove("hidden"));
+        if (raterType.value === "peer")
+          peerFields.forEach((el) => el.classList.remove("hidden"));
+      }
+
+      function updateScorePreview() {
+        scoreFields.forEach((field) => {
+          const input = document.getElementById(field.id);
+          const label = document.getElementById(field.label);
+          label.textContent = input.value;
+        });
+
+        const leadership =
+          +document.getElementById("leadershipInitiative").value || 0;
+        const influence =
+          +document.getElementById("influenceMotivation").value || 0;
+        const responsibility =
+          +document.getElementById("responsibilityAccountability").value || 0;
+        const teamwork =
+          +document.getElementById("teamworkCollaboration").value || 0;
+        const contribution =
+          +document.getElementById("schoolCommunityContribution").value || 0;
+
+        const weighted =
+          leadership * 0.25 +
+          influence * 0.25 +
+          responsibility * 0.2 +
+          teamwork * 0.15 +
+          contribution * 0.15;
+        document.getElementById("weightedPreview").textContent =
+          `${weighted.toFixed(2)}%`;
+        return weighted;
+      }
+
+      function validateNameFormat(name) {
+        const clean = normalizeNomineeName(name);
+        const pattern = /^[A-Z .'-]+,\s[A-Z .'-]+(\s[A-Z]\.)?$/;
+        return pattern.test(clean);
+      }
+
+      attachmentsInput.addEventListener("change", () => {
+        const count = attachmentsInput.files.length;
+        if (count > 5) {
+          attachmentsInput.value = "";
+          attachmentNote.textContent = "Only up to 5 files are allowed.";
+        } else {
+          attachmentNote.textContent = count
+            ? `${count} file(s) selected.`
+            : "";
+        }
       });
 
-      return Array.from(map.values()).map(row => ({
-        ...row,
-        avgLeadershipInitiative: row.leadershipInitiative / row.entries,
-        avgInfluenceMotivation: row.influenceMotivation / row.entries,
-        avgResponsibilityAccountability: row.responsibilityAccountability / row.entries,
-        avgTeamworkCollaboration: row.teamworkCollaboration / row.entries,
-        avgSchoolCommunityContribution: row.schoolCommunityContribution / row.entries,
-        avgWeightedScore: row.weightedScore / row.entries
-      })).sort((a, b) => b.avgWeightedScore - a.avgWeightedScore);
-    }
+      scoreFields.forEach((field) =>
+        document
+          .getElementById(field.id)
+          .addEventListener("input", updateScorePreview),
+      );
+      gradeLevel.addEventListener("change", updateEligiblePeriod);
+      raterType.addEventListener("change", toggleRaterFields);
 
-    function renderDashboard() {
-      const submissions = getSubmissions();
-      const grouped = groupSubmissions(submissions);
+      nominationForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        formMessage.innerHTML = "";
 
-      document.getElementById('metricNominees').textContent = grouped.length;
-      document.getElementById('metricSubmissions').textContent = submissions.length;
-      document.getElementById('metricPeer').textContent = submissions.filter(s => s.raterType === 'peer').length;
-      document.getElementById('metricAdviser').textContent = submissions.filter(s => s.raterType === 'adviser').length;
+        const nomineeName = normalizeNomineeName(nomineeNameInput.value);
+        nomineeNameInput.value = nomineeName;
 
-      const summaryBody = document.getElementById('summaryTableBody');
-      const detailBody = document.getElementById('detailTableBody');
-      summaryBody.innerHTML = '';
-      detailBody.innerHTML = '';
+        if (validateNameFormat(nomineeName)) {
+          showMessage(
+            formMessage,
+            "error",
+            "Nominee name must be in CAPITAL LETTERS and follow this format: SURNAME, GIVEN NAME, MI",
+          );
+          return;
+        }
 
-      if (!grouped.length) {
-        summaryBody.innerHTML = '<tr><td colspan="14" class="muted">No data yet.</td></tr>';
-      } else {
-        grouped.forEach((row, index) => {
-          const tr = document.createElement('tr');
-          tr.innerHTML = `
+        if (attachmentsInput.files.length > 5) {
+          showMessage(formMessage, "error", "Only 5 attachments are allowed.");
+          return;
+        }
+
+        const type = raterType.value;
+        if (!type) {
+          showMessage(
+            formMessage,
+            "error",
+            "Please select either Adviser Rating / Nomination or Peer Rating.",
+          );
+          return;
+        }
+
+        const submissions = getSubmissions();
+        const existingPeerCount = submissions.filter(
+          (s) => s.nomineeName === nomineeName && s.raterType === "peer",
+        ).length;
+        if (type === "peer" && existingPeerCount >= 5) {
+          showMessage(
+            formMessage,
+            "error",
+            "This nominee already has 5 peer ratings. No additional peer entry can be accepted.",
+          );
+          return;
+        }
+
+        const fileList = Array.from(attachmentsInput.files || []).map(
+          (file) => ({
+            name: file.name,
+            size: file.size,
+            type: file.type || "unknown",
+          }),
+        );
+
+        const payload = {
+          id: crypto.randomUUID(),
+          submittedAt: new Date().toLocaleString(),
+          nomineeName,
+          gradeLevel: document.getElementById("gradeLevel").value,
+          section: document.getElementById("section").value.trim(),
+          positionHeld: document.getElementById("positionHeld").value.trim(),
+          organization: document.getElementById("organization").value.trim(),
+          schoolYear: document.getElementById("schoolYear").value.trim(),
+          accomplishmentPeriod: document
+            .getElementById("nomineePeriod")
+            .value.trim(),
+          raterType: type,
+          adviserName: document.getElementById("adviserName").value.trim(),
+          adviserRecommendation: document.getElementById(
+            "adviserRecommendation",
+          ).value,
+          adviserRemarks: document
+            .getElementById("adviserRemarks")
+            .value.trim(),
+          peerName: document.getElementById("peerName").value.trim(),
+          peerRelationship: document
+            .getElementById("peerRelationship")
+            .value.trim(),
+          peerRemarks: document.getElementById("peerRemarks").value.trim(),
+          projects: document.getElementById("projects").value.trim(),
+          accomplishments: document
+            .getElementById("accomplishments")
+            .value.trim(),
+          motivationNarrative: document
+            .getElementById("motivationNarrative")
+            .value.trim(),
+          communityContribution: document
+            .getElementById("communityContribution")
+            .value.trim(),
+          leadershipInitiative: +document.getElementById("leadershipInitiative")
+            .value,
+          influenceMotivation: +document.getElementById("influenceMotivation")
+            .value,
+          responsibilityAccountability: +document.getElementById(
+            "responsibilityAccountability",
+          ).value,
+          teamworkCollaboration: +document.getElementById(
+            "teamworkCollaboration",
+          ).value,
+          schoolCommunityContribution: +document.getElementById(
+            "schoolCommunityContribution",
+          ).value,
+          weightedScore: updateScorePreview(),
+          attachments: fileList,
+        };
+
+        await saveSubmission(payload);
+        nominationForm.reset();
+        nomineePeriod.value = "";
+        toggleRaterFields();
+        updateScorePreview();
+        attachmentNote.textContent = "";
+        showMessage(
+          formMessage,
+          "success",
+          "Submission saved successfully. The admin dashboard can review the summarized results securely.",
+        );
+      });
+
+      document.getElementById("resetFormBtn").addEventListener("click", () => {
+        formMessage.innerHTML = "";
+        nomineePeriod.value = "";
+        attachmentNote.textContent = "";
+        toggleRaterFields();
+        updateScorePreview();
+      });
+
+      showNominationBtn.addEventListener("click", () => setView("nomination"));
+      showAdminBtn.addEventListener("click", () => setView("login"));
+      logoutBtn.addEventListener("click", () => {
+        sessionStorage.removeItem("cnhs_admin_logged_in");
+        setView("login");
+      });
+
+      document
+        .getElementById("toggleResetBtn")
+        .addEventListener("click", () => {
+          document.getElementById("resetCard").classList.toggle("hidden");
+        });
+
+      document.getElementById("loginBtn").addEventListener("click", () => {
+        const username = document.getElementById("adminUsername").value.trim();
+        const password = document.getElementById("adminPassword").value;
+        const auth = getAuth();
+
+        if (username === auth.username && password === auth.password) {
+          sessionStorage.setItem("cnhs_admin_logged_in", "true");
+          showMessage(
+            document.getElementById("loginMessage"),
+            "success",
+            "Login successful. Opening secure admin dashboard.",
+          );
+          renderDashboard();
+          setView("dashboard");
+        } else {
+          showMessage(
+            document.getElementById("loginMessage"),
+            "error",
+            "Invalid username or password.",
+          );
+        }
+      });
+
+      document
+        .getElementById("resetPasswordBtn")
+        .addEventListener("click", () => {
+          const username = document
+            .getElementById("resetUsername")
+            .value.trim();
+          const resetKey = document.getElementById("resetKey").value;
+          const newPassword = document.getElementById("newPassword").value;
+          const auth = getAuth();
+
+          if (username !== auth.username || resetKey !== auth.resetKey) {
+            showMessage(
+              document.getElementById("resetMessage"),
+              "error",
+              "Invalid username or reset key.",
+            );
+            return;
+          }
+          if (!newPassword || newPassword.length < 8) {
+            showMessage(
+              document.getElementById("resetMessage"),
+              "error",
+              "New password must be at least 8 characters long.",
+            );
+            return;
+          }
+          localStorage.setItem(
+            STORAGE_KEYS.auth,
+            JSON.stringify({ ...auth, password: newPassword }),
+          );
+          showMessage(
+            document.getElementById("resetMessage"),
+            "success",
+            "Admin password updated successfully.",
+          );
+        });
+
+      function groupSubmissions(submissions) {
+        const map = new Map();
+
+        submissions.forEach((item) => {
+          const key = item.nomineeName;
+          if (!map.has(key)) {
+            map.set(key, {
+              nomineeName: item.nomineeName,
+              gradeLevel: item.gradeLevel,
+              section: item.section,
+              entries: 0,
+              peerCount: 0,
+              adviserCount: 0,
+              leadershipInitiative: 0,
+              influenceMotivation: 0,
+              responsibilityAccountability: 0,
+              teamworkCollaboration: 0,
+              schoolCommunityContribution: 0,
+              weightedScore: 0,
+              attachmentCount: 0,
+            });
+          }
+
+          const row = map.get(key);
+          row.entries += 1;
+          row.peerCount += item.raterType === "peer" ? 1 : 0;
+          row.adviserCount += item.raterType === "adviser" ? 1 : 0;
+          row.leadershipInitiative += item.leadershipInitiative;
+          row.influenceMotivation += item.influenceMotivation;
+          row.responsibilityAccountability += item.responsibilityAccountability;
+          row.teamworkCollaboration += item.teamworkCollaboration;
+          row.schoolCommunityContribution += item.schoolCommunityContribution;
+          row.weightedScore += item.weightedScore;
+          row.attachmentCount += (item.attachments || []).length;
+        });
+
+        return Array.from(map.values())
+          .map((row) => ({
+            ...row,
+            avgLeadershipInitiative: row.leadershipInitiative / row.entries,
+            avgInfluenceMotivation: row.influenceMotivation / row.entries,
+            avgResponsibilityAccountability:
+              row.responsibilityAccountability / row.entries,
+            avgTeamworkCollaboration: row.teamworkCollaboration / row.entries,
+            avgSchoolCommunityContribution:
+              row.schoolCommunityContribution / row.entries,
+            avgWeightedScore: row.weightedScore / row.entries,
+          }))
+          .sort((a, b) => b.avgWeightedScore - a.avgWeightedScore);
+      }
+
+      function renderDashboard() {
+        async function getSubmissions() {
+          const snapshot = await db.collection("leadership_nominations").get();
+          return snapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          }));
+        }
+        const grouped = groupSubmissions(submissions);
+
+        document.getElementById("metricNominees").textContent = grouped.length;
+        document.getElementById("metricSubmissions").textContent =
+          submissions.length;
+        document.getElementById("metricPeer").textContent = submissions.filter(
+          (s) => s.raterType === "peer",
+        ).length;
+        document.getElementById("metricAdviser").textContent =
+          submissions.filter((s) => s.raterType === "adviser").length;
+
+        const summaryBody = document.getElementById("summaryTableBody");
+        const detailBody = document.getElementById("detailTableBody");
+        summaryBody.innerHTML = "";
+        detailBody.innerHTML = "";
+
+        if (!grouped.length) {
+          summaryBody.innerHTML =
+            '<tr><td colspan="14" class="muted">No data yet.</td></tr>';
+        } else {
+          grouped.forEach((row, index) => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
             <td>${index + 1}</td>
             <td><strong>${row.nomineeName}</strong></td>
-            <td>${row.gradeLevel || ''}</td>
-            <td>${row.section || ''}</td>
+            <td>${row.gradeLevel || ""}</td>
+            <td>${row.section || ""}</td>
             <td>${row.entries}</td>
             <td>${row.peerCount}</td>
             <td>${row.adviserCount}</td>
@@ -958,19 +1436,30 @@
             <td><strong>${row.avgWeightedScore.toFixed(2)}%</strong></td>
             <td>${row.attachmentCount}</td>
           `;
-          summaryBody.appendChild(tr);
-        });
-      }
+            summaryBody.appendChild(tr);
+          });
+        }
 
-      if (!submissions.length) {
-        detailBody.innerHTML = '<tr><td colspan="7" class="muted">No submission log yet.</td></tr>';
-      } else {
-        submissions.slice().reverse().forEach(item => {
-          const rater = item.raterType === 'adviser' ? (item.adviserName || 'Adviser') : (item.peerName || 'Peer');
-          const recommendation = item.raterType === 'adviser' ? (item.adviserRecommendation || '-') : (item.peerRelationship || '-');
-          const typeClass = item.raterType === 'adviser' ? 'pill-adviser' : 'pill-peer';
-          const tr = document.createElement('tr');
-          tr.innerHTML = `
+        if (!submissions.length) {
+          detailBody.innerHTML =
+            '<tr><td colspan="7" class="muted">No submission log yet.</td></tr>';
+        } else {
+          submissions
+            .slice()
+            .reverse()
+            .forEach((item) => {
+              const rater =
+                item.raterType === "adviser"
+                  ? item.adviserName || "Adviser"
+                  : item.peerName || "Peer";
+              const recommendation =
+                item.raterType === "adviser"
+                  ? item.adviserRecommendation || "-"
+                  : item.peerRelationship || "-";
+              const typeClass =
+                item.raterType === "adviser" ? "pill-adviser" : "pill-peer";
+              const tr = document.createElement("tr");
+              tr.innerHTML = `
             <td>${item.submittedAt}</td>
             <td><strong>${item.nomineeName}</strong></td>
             <td><span class="pill ${typeClass}">${item.raterType}</span></td>
@@ -979,46 +1468,59 @@
             <td>${recommendation}</td>
             <td>${(item.attachments || []).length}</td>
           `;
-          detailBody.appendChild(tr);
-        });
+              detailBody.appendChild(tr);
+            });
+        }
       }
-    }
 
-    document.getElementById('refreshDashboardBtn').addEventListener('click', renderDashboard);
+      document
+        .getElementById("refreshDashboardBtn")
+        .addEventListener("click", renderDashboard);
 
-    document.getElementById('downloadJsonBtn').addEventListener('click', () => {
-      const data = {
-        exportedAt: new Date().toISOString(),
-        submissions: getSubmissions(),
-        summary: groupSubmissions(getSubmissions())
-      };
-      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'cnhs-leadership-award-backup.json';
-      a.click();
-      URL.revokeObjectURL(url);
-    });
+      document
+        .getElementById("downloadJsonBtn")
+        .addEventListener("click", () => {
+          const data = {
+            exportedAt: new Date().toISOString(),
+            submissions: getSubmissions(),
+            summary: groupSubmissions(getSubmissions()),
+          };
+          const blob = new Blob([JSON.stringify(data, null, 2)], {
+            type: "application/json",
+          });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = "cnhs-leadership-award-backup.json";
+          a.click();
+          URL.revokeObjectURL(url);
+        });
 
-    document.getElementById('clearAllDataBtn').addEventListener('click', () => {
-      const ok = confirm('This will permanently clear all locally stored submissions in this browser. Continue?');
-      if (!ok) return;
-      saveSubmissions([]);
-      renderDashboard();
-    });
+      document
+        .getElementById("clearAllDataBtn")
+        .addEventListener("click", () => {
+          const ok = confirm(
+            "This will permanently clear all locally stored submissions in this browser. Continue?",
+          );
+          if (!ok) return;
+          saveSubmissions([]);
+          renderDashboard();
+        });
 
-    ensureAuthSeed();
-    updateEligiblePeriod();
-    toggleRaterFields();
-    updateScorePreview();
+      ensureAuthSeed();
+      updateEligiblePeriod();
+      toggleRaterFields();
+      updateScorePreview();
 
-    if (sessionStorage.getItem('cnhs_admin_logged_in') === 'true') {
-      renderDashboard();
-      setView('dashboard');
-    } else {
-      setView('nomination');
-    }
-  </script>
-</body>
+      if (sessionStorage.getItem("cnhs_admin_logged_in") === "true") {
+        renderDashboard();
+        setView("dashboard");
+      } else {
+        setView("nomination");
+      }
+    </script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
+  </body>
 </html>
