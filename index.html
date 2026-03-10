@@ -953,19 +953,6 @@
     </div>
 
     <script>
-      const firebaseConfig = {
-        apiKey: "AIzaSyDLebjG2CVFWKMMbOj4JpdaFsSI6Qx4FlI",
-        authDomain: "cnhs-leadership-award.firebaseapp.com",
-        projectId: "cnhs-leadership-award",
-        storageBucket: "cnhs-leadership-award.firebasestorage.app",
-        messagingSenderId: "496591251903",
-        appId: "1:496591251903:web:fb4719ac99d09c7a6e590a",
-        measurementId: "G-N60JRFQER7",
-      };
-
-      firebase.initializeApp(firebaseConfig);
-      const db = firebase.firestore();
-
       const STORAGE_KEYS = {
         submissions: "cnhs_leadership_award_submissions_v1",
         auth: "cnhs_admin_auth_v1",
@@ -1025,14 +1012,14 @@
         );
       }
 
-      async function saveSubmission(payload) {
-        try {
-          await db.collection("leadership_nominations").add(payload);
+      function getSubmissions() {
+        return JSON.parse(
+          localStorage.getItem(STORAGE_KEYS.submissions) || "[]",
+        );
+      }
 
-          showMessage(formMessage, "success", "Submission saved successfully.");
-        } catch (error) {
-          showMessage(formMessage, "error", error.message);
-        }
+      function saveSubmissions(data) {
+        localStorage.setItem(STORAGE_KEYS.submissions, JSON.stringify(data));
       }
 
       function setView(view) {
@@ -1145,20 +1132,15 @@
         e.preventDefault();
         formMessage.innerHTML = "";
 
-<<<<<<< HEAD
-        if (!nomineeNameInput.value) {
-          showMessage(formMessage, "error", "Nominee name is required.");
-=======
         const nomineeName = normalizeNomineeName(nomineeNameInput.value);
         nomineeNameInput.value = nomineeName;
 
-        if (validateNameFormat(nomineeName)) {
+        if (!validateNameFormat(nomineeName)) {
           showMessage(
             formMessage,
             "error",
             "Nominee name must be in CAPITAL LETTERS and follow this format: SURNAME, GIVEN NAME, MI",
           );
->>>>>>> parent of 4cf0fdb (Update index.html)
           return;
         }
 
@@ -1250,7 +1232,8 @@
           attachments: fileList,
         };
 
-        await saveSubmission(payload);
+        submissions.push(payload);
+        saveSubmissions(submissions);
         nominationForm.reset();
         nomineePeriod.value = "";
         toggleRaterFields();
@@ -1396,13 +1379,7 @@
       }
 
       function renderDashboard() {
-        async function getSubmissions() {
-          const snapshot = await db.collection("leadership_nominations").get();
-          return snapshot.docs.map((doc) => ({
-            id: doc.id,
-            ...doc.data(),
-          }));
-        }
+        const submissions = getSubmissions();
         const grouped = groupSubmissions(submissions);
 
         document.getElementById("metricNominees").textContent = grouped.length;
@@ -1524,8 +1501,5 @@
         setView("nomination");
       }
     </script>
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
   </body>
 </html>
