@@ -1144,17 +1144,8 @@
         e.preventDefault();
         formMessage.innerHTML = "";
 
-        const nomineeName = normalizeNomineeName(nomineeNameInput.value);
-        nomineeNameInput.value = nomineeName;
-
-        console.log("Normalized Nominee Name:", nomineeName);
-
-        if (!validateNameFormat(nomineeName)) {
-          showMessage(
-            formMessage,
-            "error",
-            "Use CAPITAL LETTERS only. Format: SURNAME, GIVEN NAME, MI (e.g., DELA CRUZ, JUAN A.)",
-          );
+        if (!nomineeNameInput.value) {
+          showMessage(formMessage, "error", "Nominee name is required.");
           return;
         }
 
