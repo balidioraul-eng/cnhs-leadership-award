@@ -1144,8 +1144,20 @@
         e.preventDefault();
         formMessage.innerHTML = "";
 
+<<<<<<< HEAD
         if (!nomineeNameInput.value) {
           showMessage(formMessage, "error", "Nominee name is required.");
+=======
+        const nomineeName = normalizeNomineeName(nomineeNameInput.value);
+        nomineeNameInput.value = nomineeName;
+
+        if (!validateNameFormat(nomineeName)) {
+          showMessage(
+            formMessage,
+            "error",
+            "Use CAPITAL LETTERS only. Format: SURNAME, GIVEN NAME, MI (e.g., DELA CRUZ, JUAN A.)",
+          );
+>>>>>>> parent of 4cf0fdb (Update index.html)
           return;
         }
 
