@@ -4,394 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Compostela National High School | Leadership Award Nomination</title>
-    <style>
-      :root {
-        --bg: #f4f7fb;
-        --card: #ffffff;
-        --line: #d7e0ec;
-        --text: #123;
-        --muted: #5b6b7b;
-        --primary: #0b57d0;
-        --primary-dark: #0847aa;
-        --accent: #0f766e;
-        --danger: #b42318;
-        --warn: #b54708;
-        --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-        --radius: 18px;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-      body {
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        background: linear-gradient(180deg, #eef4fb 0%, #f8fbff 100%);
-        color: var(--text);
-      }
-
-      .topbar {
-        background: #0d47a1;
-        color: #fff;
-        padding: 14px 20px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        position: sticky;
-        top: 0;
-        z-index: 20;
-        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
-      }
-
-      .brand {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-      }
-
-      .brand strong {
-        font-size: 18px;
-      }
-      .brand span {
-        font-size: 12px;
-        opacity: 0.9;
-      }
-
-      .top-actions {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-
-      .container {
-        max-width: 1220px;
-        margin: 24px auto;
-        padding: 0 16px 40px;
-      }
-
-      .card {
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-        padding: 22px;
-        margin-bottom: 18px;
-      }
-
-      .hero {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 18px;
-        align-items: start;
-      }
-
-      h1,
-      h2,
-      h3 {
-        margin: 0 0 10px;
-      }
-      h1 {
-        font-size: 28px;
-      }
-      h2 {
-        font-size: 22px;
-      }
-      h3 {
-        font-size: 18px;
-      }
-      p {
-        line-height: 1.5;
-      }
-      .muted {
-        color: var(--muted);
-      }
-
-      .badge {
-        display: inline-block;
-        padding: 6px 10px;
-        border-radius: 999px;
-        font-size: 12px;
-        font-weight: 700;
-        background: #e7f0ff;
-        color: var(--primary-dark);
-        margin-right: 8px;
-        margin-bottom: 8px;
-      }
-
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        gap: 14px;
-      }
-
-      .col-12 {
-        grid-column: span 12;
-      }
-      .col-8 {
-        grid-column: span 8;
-      }
-      .col-6 {
-        grid-column: span 6;
-      }
-      .col-4 {
-        grid-column: span 4;
-      }
-      .col-3 {
-        grid-column: span 3;
-      }
-
-      label {
-        display: block;
-        font-size: 13px;
-        font-weight: 700;
-        margin-bottom: 6px;
-      }
-
-      input,
-      select,
-      textarea {
-        width: 100%;
-        padding: 12px 12px;
-        border: 1px solid #c9d6e4;
-        border-radius: 12px;
-        font-size: 14px;
-        background: #fff;
-      }
-
-      textarea {
-        min-height: 110px;
-        resize: vertical;
-      }
-      input[type="file"] {
-        padding: 9px;
-      }
-      input[type="checkbox"] {
-        width: auto;
-        transform: translateY(2px);
-      }
-      input[type="range"] {
-        padding: 0;
-      }
-
-      .hint {
-        font-size: 12px;
-        color: var(--muted);
-        margin-top: 4px;
-      }
-      .inline {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-      .actions {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-        margin-top: 8px;
-      }
-
-      button,
-      .btn {
-        border: 0;
-        border-radius: 12px;
-        padding: 11px 16px;
-        cursor: pointer;
-        font-size: 14px;
-        font-weight: 700;
-        transition: 0.2s ease;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-      }
-
-      .btn-primary {
-        background: var(--primary);
-        color: white;
-      }
-      .btn-primary:hover {
-        background: var(--primary-dark);
-      }
-      .btn-secondary {
-        background: #edf3fb;
-        color: #1d3557;
-      }
-      .btn-danger {
-        background: var(--danger);
-        color: white;
-      }
-      .btn-success {
-        background: var(--accent);
-        color: white;
-      }
-      .btn-warning {
-        background: #fff3e8;
-        color: var(--warn);
-        border: 1px solid #f4d7b5;
-      }
-
-      .notice,
-      .error,
-      .success {
-        border-radius: 12px;
-        padding: 12px 14px;
-        font-size: 14px;
-        margin-top: 10px;
-      }
-      .notice {
-        background: #eef7ff;
-        color: #123f72;
-        border: 1px solid #cfe3ff;
-      }
-      .error {
-        background: #fff2f0;
-        color: #8a1f17;
-        border: 1px solid #f2c7c2;
-      }
-      .success {
-        background: #effdf6;
-        color: #146c43;
-        border: 1px solid #bbe7ce;
-      }
-
-      .hidden {
-        display: none !important;
-      }
-
-      .metric-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 14px;
-        margin: 12px 0 18px;
-      }
-
-      .metric {
-        border: 1px solid var(--line);
-        border-radius: 16px;
-        padding: 16px;
-        background: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
-      }
-      .metric .value {
-        font-size: 28px;
-        font-weight: 800;
-        margin-top: 8px;
-      }
-      .metric .label {
-        font-size: 12px;
-        text-transform: uppercase;
-        color: var(--muted);
-        letter-spacing: 0.04em;
-      }
-
-      .table-wrap {
-        overflow: auto;
-        border: 1px solid var(--line);
-        border-radius: 16px;
-      }
-
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        min-width: 980px;
-        background: white;
-      }
-
-      th,
-      td {
-        padding: 12px 10px;
-        border-bottom: 1px solid #e6edf5;
-        text-align: left;
-        vertical-align: top;
-        font-size: 13px;
-      }
-
-      th {
-        background: #f7faff;
-        position: sticky;
-        top: 0;
-        z-index: 1;
-      }
-
-      .pill {
-        display: inline-block;
-        padding: 5px 8px;
-        border-radius: 999px;
-        font-size: 11px;
-        font-weight: 700;
-      }
-      .pill-peer {
-        background: #efe9ff;
-        color: #5b21b6;
-      }
-      .pill-adviser {
-        background: #e7f8ef;
-        color: #0b6b3d;
-      }
-
-      .score-line {
-        border: 1px dashed #cfdae7;
-        border-radius: 14px;
-        padding: 12px;
-        background: #fbfdff;
-        margin-bottom: 12px;
-      }
-
-      .score-head {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 12px;
-        flex-wrap: wrap;
-        margin-bottom: 6px;
-      }
-
-      .score-value {
-        font-weight: 800;
-        color: var(--primary-dark);
-        min-width: 64px;
-        text-align: right;
-      }
-
-      .divider {
-        height: 1px;
-        background: #e6edf5;
-        margin: 14px 0;
-      }
-
-      .right {
-        text-align: right;
-      }
-      .small {
-        font-size: 12px;
-      }
-
-      .auth-shell {
-        max-width: 520px;
-        margin: 42px auto;
-      }
-
-      .footer-note {
-        font-size: 12px;
-        color: var(--muted);
-        margin-top: 14px;
-      }
-
-      @media (max-width: 980px) {
-        .hero,
-        .metric-grid {
-          grid-template-columns: 1fr;
-        }
-        .col-8,
-        .col-6,
-        .col-4,
-        .col-3 {
-          grid-column: span 12;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <div class="topbar">
@@ -951,6 +564,562 @@
         </div>
       </section>
     </div>
-    <script src="js/script.js"></script>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+      import {
+        getFirestore,
+        collection,
+        addDoc,
+        getDocs,
+        deleteDoc,
+        doc,
+      } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+      /* ---------------- FIREBASE ---------------- */
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDLebjG2CVFWKMMbOj4JpdaFsSI6Qx4FlI",
+        authDomain: "cnhs-leadership-award.firebaseapp.com",
+        projectId: "cnhs-leadership-award",
+        storageBucket: "cnhs-leadership-award.firebasestorage.app",
+        messagingSenderId: "496591251903",
+        appId: "1:496591251903:web:fb4719ac99d09c7a6e590a",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+
+      /* ---------------- AUTH ---------------- */
+
+      const STORAGE_KEYS = {
+        auth: "cnhs_admin_auth_v1",
+      };
+
+      const DEFAULT_AUTH = {
+        username: "admin",
+        password: "CNHS-Leadership2026!",
+        resetKey: "CNHS-RESET-2026",
+      };
+
+      function ensureAuthSeed() {
+        if (!localStorage.getItem(STORAGE_KEYS.auth)) {
+          localStorage.setItem(STORAGE_KEYS.auth, JSON.stringify(DEFAULT_AUTH));
+        }
+      }
+
+      function getAuth() {
+        return JSON.parse(localStorage.getItem(STORAGE_KEYS.auth));
+      }
+
+      /* ---------------- FIRESTORE ---------------- */
+
+      async function saveSubmission(payload) {
+        await addDoc(collection(db, "submissions"), payload);
+      }
+
+      async function getSubmissions() {
+        const snapshot = await getDocs(collection(db, "submissions"));
+        const data = [];
+
+        snapshot.forEach((d) => {
+          data.push({ id: d.id, ...d.data() });
+        });
+
+        return data;
+      }
+
+      async function deleteAllSubmissions() {
+        const snapshot = await getDocs(collection(db, "submissions"));
+
+        for (const item of snapshot.docs) {
+          await deleteDoc(doc(db, "submissions", item.id));
+        }
+      }
+
+      /* ---------------- UTILITIES ---------------- */
+
+      function normalizeNomineeName(name) {
+        return String(name || "")
+          .trim()
+          .replace(/\s+/g, " ")
+          .toUpperCase();
+      }
+
+      function validateNameFormat(name) {
+        const pattern = /^[A-Z .'-]+,\s[A-Z .'-]+(\s[A-Z]\.)?$/;
+        return pattern.test(name);
+      }
+
+      /* ---------------- MAIN ---------------- */
+
+      document.addEventListener("DOMContentLoaded", () => {
+        /* ---------- ELEMENTS ---------- */
+
+        const nominationView = document.getElementById("nominationView");
+        const adminLoginView = document.getElementById("adminLoginView");
+        const adminDashboardView =
+          document.getElementById("adminDashboardView");
+
+        const showNominationBtn = document.getElementById("showNominationBtn");
+        const showAdminBtn = document.getElementById("showAdminBtn");
+        const logoutBtn = document.getElementById("logoutBtn");
+
+        const nominationForm = document.getElementById("nominationForm");
+        const formMessage = document.getElementById("formMessage");
+
+        const raterType = document.getElementById("raterType");
+        const gradeLevel = document.getElementById("gradeLevel");
+        const nomineePeriod = document.getElementById("nomineePeriod");
+
+        const attachmentsInput = document.getElementById("attachments");
+        const attachmentNote = document.getElementById("attachmentNote");
+
+        const nomineeNameInput = document.getElementById("nomineeName");
+
+        /* ---------- VIEW CONTROL ---------- */
+
+        function setView(view) {
+          nominationView.classList.add("hidden");
+          adminLoginView.classList.add("hidden");
+          adminDashboardView.classList.add("hidden");
+          logoutBtn.classList.add("hidden");
+
+          if (view === "nomination") nominationView.classList.remove("hidden");
+
+          if (view === "login") {
+            adminLoginView.classList.remove("hidden");
+            console.log("Admin login view shown");
+          }
+
+          if (view === "dashboard") {
+            adminDashboardView.classList.remove("hidden");
+            logoutBtn.classList.remove("hidden");
+          }
+        }
+
+        /* ---------- NAVIGATION ---------- */
+
+        showNominationBtn.addEventListener("click", () =>
+          setView("nomination"),
+        );
+
+        showAdminBtn.addEventListener("click", () => {
+          setView("login");
+          console.log("Admin login view shown");
+        });
+
+        logoutBtn.addEventListener("click", () => {
+          sessionStorage.removeItem("admin");
+          setView("login");
+        });
+
+        /* ---------- PERIOD ---------- */
+
+        function updateEligiblePeriod() {
+          if (gradeLevel.value === "10")
+            nomineePeriod.value =
+              "Eligible accomplishments: Grade 7 to Grade 10";
+          else if (gradeLevel.value === "12")
+            nomineePeriod.value =
+              "Eligible accomplishments: Grade 11 to Grade 12";
+          else nomineePeriod.value = "";
+        }
+
+        gradeLevel.addEventListener("change", updateEligiblePeriod);
+
+        /* ---------- SCORE PREVIEW ---------- */
+
+        const scoreFields = [
+          "leadershipInitiative",
+          "influenceMotivation",
+          "responsibilityAccountability",
+          "teamworkCollaboration",
+          "schoolCommunityContribution",
+        ];
+
+        function updateScorePreview() {
+          scoreFields.forEach((id) => {
+            document.getElementById(id + "Val").textContent =
+              document.getElementById(id).value;
+          });
+
+          const leadership =
+            +document.getElementById("leadershipInitiative").value || 0;
+
+          const influence =
+            +document.getElementById("influenceMotivation").value || 0;
+
+          const responsibility =
+            +document.getElementById("responsibilityAccountability").value || 0;
+
+          const teamwork =
+            +document.getElementById("teamworkCollaboration").value || 0;
+
+          const contribution =
+            +document.getElementById("schoolCommunityContribution").value || 0;
+
+          const weighted =
+            leadership * 0.25 +
+            influence * 0.25 +
+            responsibility * 0.2 +
+            teamwork * 0.15 +
+            contribution * 0.15;
+
+          document.getElementById("weightedPreview").textContent =
+            weighted.toFixed(2) + "%";
+
+          return weighted;
+        }
+
+        scoreFields.forEach((id) =>
+          document
+            .getElementById(id)
+            .addEventListener("input", updateScorePreview),
+        );
+
+        /* ---------- ATTACHMENTS ---------- */
+
+        attachmentsInput.addEventListener("change", () => {
+          const count = attachmentsInput.files.length;
+
+          if (count > 5) {
+            attachmentsInput.value = "";
+            attachmentNote.textContent = "Only up to 5 files are allowed.";
+          } else {
+            attachmentNote.textContent = count
+              ? `${count} file(s) selected.`
+              : "";
+          }
+        });
+
+        /* ---------- FORM SUBMIT ---------- */
+
+        nominationForm.addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const nomineeName = normalizeNomineeName(nomineeNameInput.value);
+
+          nomineeNameInput.value = nomineeName;
+
+          if (!validateNameFormat(nomineeName)) {
+            alert("Use format: SURNAME, GIVEN NAME, MI");
+            return;
+          }
+
+          const rater = raterType.value;
+
+          if (!rater) {
+            alert("Select rater type.");
+            return;
+          }
+
+          const submissions = await getSubmissions();
+
+          const peerCount = submissions.filter(
+            (s) => s.nomineeName === nomineeName && s.raterType === "peer",
+          ).length;
+
+          if (rater === "peer" && peerCount >= 5) {
+            alert("This nominee already has 5 peer ratings.");
+            return;
+          }
+
+          const payload = {
+            submittedAt: new Date().toLocaleString(),
+
+            nomineeName,
+
+            gradeLevel: gradeLevel.value,
+
+            section: document.getElementById("section").value,
+
+            raterType: rater,
+
+            adviserName: document.getElementById("adviserName").value,
+
+            peerName: document.getElementById("peerName").value,
+
+            leadershipInitiative: +document.getElementById(
+              "leadershipInitiative",
+            ).value,
+
+            influenceMotivation: +document.getElementById("influenceMotivation")
+              .value,
+
+            responsibilityAccountability: +document.getElementById(
+              "responsibilityAccountability",
+            ).value,
+
+            teamworkCollaboration: +document.getElementById(
+              "teamworkCollaboration",
+            ).value,
+
+            schoolCommunityContribution: +document.getElementById(
+              "schoolCommunityContribution",
+            ).value,
+
+            weightedScore: updateScorePreview(),
+
+            attachments: Array.from(attachmentsInput.files).map((f) => ({
+              name: f.name,
+              size: f.size,
+            })),
+          };
+
+          await saveSubmission(payload);
+
+          nominationForm.reset();
+
+          updateScorePreview();
+
+          alert("Submission saved successfully.");
+        });
+
+        /* ---------- GROUPING ---------- */
+
+        function groupSubmissions(submissions) {
+          const map = new Map();
+
+          submissions.forEach((item) => {
+            const key = item.nomineeName;
+
+            if (!map.has(key)) {
+              map.set(key, {
+                nomineeName: item.nomineeName,
+                gradeLevel: item.gradeLevel,
+                section: item.section,
+
+                entries: 0,
+                peerCount: 0,
+                adviserCount: 0,
+
+                leadershipInitiative: 0,
+                influenceMotivation: 0,
+                responsibilityAccountability: 0,
+                teamworkCollaboration: 0,
+                schoolCommunityContribution: 0,
+
+                weightedScore: 0,
+                attachmentCount: 0,
+              });
+            }
+
+            const row = map.get(key);
+
+            row.entries += 1;
+
+            if (item.raterType === "peer") row.peerCount += 1;
+            if (item.raterType === "adviser") row.adviserCount += 1;
+
+            row.leadershipInitiative += Number(item.leadershipInitiative || 0);
+            row.influenceMotivation += Number(item.influenceMotivation || 0);
+            row.responsibilityAccountability += Number(
+              item.responsibilityAccountability || 0,
+            );
+            row.teamworkCollaboration += Number(
+              item.teamworkCollaboration || 0,
+            );
+            row.schoolCommunityContribution += Number(
+              item.schoolCommunityContribution || 0,
+            );
+
+            row.weightedScore += Number(item.weightedScore || 0);
+
+            row.attachmentCount += (item.attachments || []).length;
+          });
+
+          return Array.from(map.values())
+            .map((row) => {
+              const entries = row.entries || 1;
+
+              return {
+                ...row,
+
+                avgLeadershipInitiative: row.leadershipInitiative / entries,
+                avgInfluenceMotivation: row.influenceMotivation / entries,
+                avgResponsibilityAccountability:
+                  row.responsibilityAccountability / entries,
+                avgTeamworkCollaboration: row.teamworkCollaboration / entries,
+                avgSchoolCommunityContribution:
+                  row.schoolCommunityContribution / entries,
+
+                avgWeightedScore: row.weightedScore / entries,
+              };
+            })
+            .sort((a, b) => b.avgWeightedScore - a.avgWeightedScore);
+        }
+        /* ---------- DASHBOARD ---------- */
+        async function renderDashboard() {
+          const submissions = await getSubmissions();
+
+          const grouped = groupSubmissions(submissions);
+
+          document.getElementById("metricNominees").textContent =
+            grouped.length;
+
+          document.getElementById("metricSubmissions").textContent =
+            submissions.length;
+
+          document.getElementById("metricPeer").textContent =
+            submissions.filter((s) => s.raterType === "peer").length;
+
+          document.getElementById("metricAdviser").textContent =
+            submissions.filter((s) => s.raterType === "adviser").length;
+
+          const summaryBody = document.getElementById("summaryTableBody");
+          const detailBody = document.getElementById("detailTableBody");
+
+          summaryBody.innerHTML = "";
+          detailBody.innerHTML = "";
+
+          if (!grouped.length) {
+            summaryBody.innerHTML =
+              '<tr><td colspan="14" class="muted">No data yet.</td></tr>';
+          } else {
+            grouped.forEach((row, index) => {
+              const tr = document.createElement("tr");
+
+              tr.innerHTML = `
+        <td>${index + 1}</td>
+        <td><strong>${row.nomineeName}</strong></td>
+        <td>${row.gradeLevel || ""}</td>
+        <td>${row.section || ""}</td>
+        <td>${row.entries}</td>
+        <td>${row.peerCount}</td>
+        <td>${row.adviserCount}</td>
+        <td>${row.avgLeadershipInitiative.toFixed(2)}%</td>
+        <td>${row.avgInfluenceMotivation.toFixed(2)}%</td>
+        <td>${row.avgResponsibilityAccountability.toFixed(2)}%</td>
+        <td>${row.avgTeamworkCollaboration.toFixed(2)}%</td>
+        <td>${row.avgSchoolCommunityContribution.toFixed(2)}%</td>
+        <td><strong>${row.avgWeightedScore.toFixed(2)}%</strong></td>
+        <td>${row.attachmentCount}</td>
+      `;
+
+              summaryBody.appendChild(tr);
+            });
+          }
+
+          /* ---------- DETAIL TABLE ---------- */
+
+          submissions
+            .slice()
+            .reverse()
+            .forEach((item) => {
+              const rater =
+                item.raterType === "adviser"
+                  ? item.adviserName || "Adviser"
+                  : item.peerName || "Peer";
+
+              const recommendation =
+                item.raterType === "adviser"
+                  ? item.adviserRecommendation || "-"
+                  : item.peerRelationship || "-";
+
+              const typeClass =
+                item.raterType === "adviser" ? "pill-adviser" : "pill-peer";
+
+              const attachmentsCount = Array.isArray(item.attachments)
+                ? item.attachments.length
+                : 0;
+
+              const weighted = Number(item.weightedScore || 0).toFixed(2);
+
+              const tr = document.createElement("tr");
+
+              tr.innerHTML = `
+        <td>${item.submittedAt || "-"}</td>
+        <td><strong>${item.nomineeName || "-"}</strong></td>
+        <td><span class="pill ${typeClass}">${item.raterType || "-"}</span></td>
+        <td>${rater}</td>
+        <td>${weighted}%</td>
+        <td>${recommendation}</td>
+        <td>${attachmentsCount}</td>
+      `;
+
+              detailBody.appendChild(tr);
+            });
+        }
+
+        /* ---------- ADMIN LOGIN ---------- */
+
+        document
+          .getElementById("loginBtn")
+          .addEventListener("click", async () => {
+            const username = document.getElementById("adminUsername").value;
+
+            const password = document.getElementById("adminPassword").value;
+
+            const auth = getAuth();
+
+            if (username === auth.username && password === auth.password) {
+              sessionStorage.setItem("admin", "true");
+
+              await renderDashboard();
+
+              setView("dashboard");
+            } else {
+              alert("Invalid login");
+            }
+          });
+
+        /* ---------- EXPORT JSON ---------- */
+
+        document
+          .getElementById("downloadJsonBtn")
+          .addEventListener("click", async () => {
+            const submissions = await getSubmissions();
+
+            const data = {
+              exportedAt: new Date().toISOString(),
+              submissions,
+              summary: groupSubmissions(submissions),
+            };
+
+            const blob = new Blob([JSON.stringify(data, null, 2)], {
+              type: "application/json",
+            });
+
+            const url = URL.createObjectURL(blob);
+
+            const a = document.createElement("a");
+
+            a.href = url;
+
+            a.download = "leadership-award-backup.json";
+
+            a.click();
+          });
+
+        /* ---------- CLEAR DATABASE ---------- */
+
+        document
+          .getElementById("clearAllDataBtn")
+          .addEventListener("click", async () => {
+            const ok = confirm("Delete ALL submissions?");
+
+            if (!ok) return;
+
+            await deleteAllSubmissions();
+
+            renderDashboard();
+          });
+
+        /* ---------- INIT ---------- */
+
+        ensureAuthSeed();
+
+        updateEligiblePeriod();
+
+        updateScorePreview();
+
+        if (sessionStorage.getItem("admin") === "true") {
+          renderDashboard();
+          setView("dashboard");
+        } else {
+          setView("nomination");
+        }
+      });
+    </script>
   </body>
 </html>
