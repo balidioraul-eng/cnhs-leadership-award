@@ -1147,6 +1147,8 @@
         const nomineeName = normalizeNomineeName(nomineeNameInput.value);
         nomineeNameInput.value = nomineeName;
 
+        console.log("Normalized Nominee Name:", nomineeName);
+
         if (!validateNameFormat(nomineeName)) {
           showMessage(
             formMessage,
